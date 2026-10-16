@@ -1,24 +1,34 @@
 import logging
 import os
+from math import floor
+from random import choice
+from typing import Union
 
+import i18n
 import ujson
 
-from scripts.cat.cats import Cat
-from scripts.cat.save_load import get_faded_ids
+from scripts.cat.cats import Cat, BACKSTORIES
 from scripts.cat.save_load import load_faded_cat_ids
 from scripts.cat_relations.inheritance2 import inheritance_db
-from scripts.game_structure import constants
-from scripts.game_structure import game
+from scripts.cat.save_load import get_faded_ids
+from ..cat.enums import CatGroup, CatRank
+from scripts.cat.pelts import Pelt
+from scripts.cat_relations.inheritance import Inheritance
 from scripts.game_structure.game.switches import (
     switch_get_value,
     switch_set_value,
     Switch,
 )
-from scripts.housekeeping.game_version import SAVE_VERSION_NUMBER
-from ..cat.conditions.condition_save_load import load_conditions
-from ..cat.conditions.gain_conditions import gain_permanent_condition
-from ..cat.enums import CatGroup, CatRank
+from ..cat.factories.enums import CatType
 from ..cat.factories.load_cat_factory import LoadCatFactory
+from ..cat.factories.typed_dicts import MentorshipDict, StatusDict
+from ..cat.names import Name
+from ..cat.pronouns import get_new_pronouns
+from scripts.housekeeping.version import SAVE_VERSION_NUMBER
+from scripts.game_structure import constants
+from scripts.game_structure import game
+from ..cat.personality import Personality
+from ..cat.skills import CatSkills
 from ..cat_relations.cat_handle_funcs import (
     init_all_relationships,
     load_relationship_of_cat,
@@ -28,31 +38,35 @@ from ..clan_resources.point_of_interest import (
     generate_and_add_new_poi,
     PoiType,
 )
+from ..cat.microservices.conditions import get_permanent_condition
 from ..housekeeping.datadir import get_save_dir
 
 logger = logging.getLogger(__name__)
 
 
-def load_cats(version_info: dict):
+def load_cats():
     load_faded_cat_ids(switch_get_value(Switch.clan_save_id))
     try:
-        json_load(version_info)
+        json_load()
     except FileNotFoundError:
-        csv_load()
+        csv_load(Cat.all_cats)
     except Exception:
         Cat.all_cats.clear()
         Cat.all_cats_list.clear()
         raise
 
 
-def json_load(version_info: dict):
+def json_load():
     Cat.all_cats.clear()
     Cat.all_cats_list.clear()
 
     all_cats = []
     clanname = switch_get_value(Switch.clan_list)[0]
     clan_cats_json_path = f"{get_save_dir()}/{clanname}/clan_cats.json"
-
+    with open(
+        f"resources/dicts/conversion_dict.json", "r", encoding="utf-8"
+    ) as read_file:
+        convert = ujson.loads(read_file.read())
     try:
         with open(clan_cats_json_path, "r", encoding="utf-8") as read_file:
             cat_data = ujson.loads(read_file.read())
@@ -64,6 +78,8 @@ def json_load(version_info: dict):
         switch_set_value(Switch.error_message, f"{clan_cats_json_path} is malformed!")
         switch_set_value(Switch.traceback, e)
         raise
+
+    old_tortie_patches = convert["old_tortie_patches"]
 
     # create new cat objects
     for i, cat_dict in enumerate(cat_data):
@@ -91,12 +107,12 @@ def json_load(version_info: dict):
             elif cat.status.group == CatGroup.DARK_FOREST:
                 game.dark_forest.adjust_facets_by_cat(cat)
 
-        load_conditions(cat, version_info)
+        cat.load_conditions()
 
         # this is here to handle paralyzed cats in old saves
-        if cat.pelt.paralyzed and "paralyzed" not in cat.permanent_conditions:
-            gain_permanent_condition(cat, "paralyzed")
-        elif "paralyzed" in cat.permanent_conditions and not cat.pelt.paralyzed:
+        if cat.pelt.paralyzed and "paralyzed" not in cat.permanent_condition:
+            get_permanent_condition(cat, "paralyzed")
+        elif "paralyzed" in cat.permanent_condition and not cat.pelt.paralyzed:
             cat.pelt.paralyzed = True
 
         # load the relationships
@@ -124,7 +140,7 @@ def json_load(version_info: dict):
     inheritance_db.load_inheritances(Cat, get_faded_ids)
 
 
-def csv_load():
+def csv_load(all_cats):
     if switch_get_value(Switch.clan_list)[0].strip() == "":
         return
     else:
@@ -167,7 +183,7 @@ def save_check():
 
 
 def version_convert(version_info):
-    """Does most save-conversion that require referencing the saved version number.
+    """Does all save-conversion that require referencing the saved version number.
     This is a separate function, since the version info is stored in clan.json, but most conversion needs to be
     done on the cats. Clan data is loaded in after cats, however."""
 
@@ -192,8 +208,26 @@ def version_convert(version_info):
 
     if version < 2:
         for c in Cat.all_cats.values():
-            for con in c.temporary_conditions + c.permanent_conditions:
-                con.moon_gained = game.clan.age - con.moon_gained
+            for con in c.injuries:
+                moons_with = 0
+                if "moons_with" in c.injuries[con]:
+                    moons_with = c.injuries[con]["moons_with"]
+                    c.injuries[con].pop("moons_with")
+                c.injuries[con]["moon_start"] = game.clan.age - moons_with
+
+            for con in c.illnesses:
+                moons_with = 0
+                if "moons_with" in c.illnesses[con]:
+                    moons_with = c.illnesses[con]["moons_with"]
+                    c.illnesses[con].pop("moons_with")
+                c.illnesses[con]["moon_start"] = game.clan.age - moons_with
+
+            for con in c.permanent_condition:
+                moons_with = 0
+                if "moons_with" in c.permanent_condition[con]:
+                    moons_with = c.permanent_condition[con]["moons_with"]
+                    c.permanent_condition[con].pop("moons_with")
+                c.permanent_condition[con]["moon_start"] = game.clan.age - moons_with
 
     # freshkill start for older clans
     if version < 3 and game.clan.freshkill_pile:

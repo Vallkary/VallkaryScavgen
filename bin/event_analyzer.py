@@ -165,23 +165,23 @@ for i in schema_common["definitions"]["backstory"]["enum"]:
     valid_records["r_c"]["backstory"][i] = []
 
 history_scarrable = [
-    "bite_wound",
+    "bite-wound",
     "cat-bite",
-    "severe_burn",
-    "rat_bite",
-    "snake_bite",
-    "mangled_tail",
-    "mangled_leg",
-    "torn_ear",
+    "severe burn",
+    "rat bite",
+    "snake bite",
+    "mangled tail",
+    "mangled leg",
+    "torn ear",
     "frostbite",
-    "torn_pelt",
-    "damaged_eyes",
+    "torn pelt",
+    "damaged eyes",
     "quilled by porcupine",
-    "claw_wound",
-    "beak_bite",
-    "broken_jaw",
-    "broken_back",
-    "broken_bone",
+    "claw-wound",
+    "beak bite",
+    "broken jaw",
+    "broken back",
+    "broken bone",
 ]
 history_lethal = []
 all_history = []

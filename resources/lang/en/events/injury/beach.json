@@ -42,7 +42,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "water_in_lungs"
+                    "water in their lungs"
                 ]
             }
         ],
@@ -95,7 +95,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "cracked_pads"
+                    "cracked pads"
                 ]
             }
         ]
@@ -211,7 +211,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "dangerously_cold"
+                    "shivering"
                 ]
             }
         ],
@@ -341,7 +341,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "claw_wound"
+                    "claw-wound"
                 ],
                 "scars": [
                     "BACK", "TWO"
@@ -409,7 +409,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "claw_wound"
+                    "claw-wound"
                 ],
                 "scars": [
                     "BACK", "TWO"
@@ -486,7 +486,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "water_in_lungs"
+                    "water in their lungs"
                 ]
             }
         ],
@@ -573,7 +573,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "dangerously_cold"
+                    "shivering"
                 ]
             }
         ],
@@ -748,7 +748,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "snake_bite"
+                    "snake bite"
                 ]
             }
         ],
@@ -785,7 +785,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "cracked_pads"
+                    "cracked pads"
                 ]
             }
         ]
@@ -815,7 +815,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "water_in_lungs"
+                    "water in their lungs"
                 ]
             }
         ],
@@ -952,7 +952,7 @@
         "m_c"
       ],
       "injuries": [
-        "broken_bone"
+        "broken bone"
       ]
     }
   ],
@@ -1046,7 +1046,7 @@
                 "m_c"
             ],
             "death": "m_c died from {PRONOUN/m_c/poss} wounds defending prey from a coconut crab.",
-            "scar": "m_c was scarred after chasing away a coconut crab."
+            "scar": "m_c was scarred after chasing away a Coconut crab."
         }
     ]
 },
@@ -1143,7 +1143,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "small_cut"
+                    "small cut"
                 ]
             }
         ]
@@ -1164,7 +1164,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "small_cut"
+                    "small cut"
                 ]
             },
             {
@@ -1172,7 +1172,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "venom_sickness"
+                    "venom sickness"
                 ]
             }
         ],

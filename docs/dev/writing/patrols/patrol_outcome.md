@@ -185,16 +185,16 @@ Used to dictate some odds-and-ends about event constraints: [General Tags](../re
 
 ***
 
-### outcome_art: str
-Optional. Name of outcome-specific art, without file extension (no .png). If no art is specified, the intro art will be used. If you would like this to be art of the POI, you can just enter `"POI"` as the art file.
+### art: str
+Optional. Name of outcome-specific art, without file extension (no .png). If no art is specified, the intro art will be used. 
 
- Example: "outcome_art": "bord_general_intro",
+ Example: "art": "bord_general_intro",
 
 
-### outcome_art_clean: str
+### art_clean: str
 Optional. Name of non-gore outcome-specific art, without file extension (no .png). Adding a clean version of the art marks the normal version as containing gore. The game will then use the clean version if the "Allow mild gore and blood in patrol artwork" setting is off, and the explicit version if this setting is on.
 
- Example: "outcome_art_clean": "bord_general_intro",
+ Example: "art_clean": "bord_general_intro",
 
 ### strings: list[str]
 This is a list of events applicable to the constraints on this events block. You may include as many or as few events here as you wish, but remember that the constraints will apply to *all* of them. 

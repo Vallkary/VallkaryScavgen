@@ -19,7 +19,7 @@ from ..ui.scale import ui_scale, ui_scale_dimensions, ui_scale_offset, ui_scale_
 from .Screens import Screens
 from .enums import GameScreen
 from .screens_core.screens_core import rebuild_top_menu_buttons, rebuild_core
-from ..game_structure.game.save_load import read_clans, get_clan_json
+from ..game_structure.game.save_load import read_clans
 from ..game_structure.game.settings import game_setting_get
 from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_button import get_button_dict, ButtonStyles
@@ -170,15 +170,10 @@ class SwitchClanScreen(Screens):
         for clan in self.clan_list[1:]:
             self.clan_name[-1].append(clan)
             try:
-                with open(get_clan_json(clan)) as f:
+                with open(f"{get_save_dir()}/{clan}clan.json") as f:
                     clan_button_name = ujson.load(f).get("displayname", clan)
-            except:
-                logger.warning(
-                    "Failed to read display name of clan with ID %s",
-                    clan,
-                    exc_info=True,
-                )
-                continue
+            except (FileNotFoundError, ujson.JSONDecodeError):
+                clan_button_name = clan
             self.clan_display_names[-1].append(clan_button_name)
             self.clan_buttons[-1].append(
                 UISurfaceImageButton(

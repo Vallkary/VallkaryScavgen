@@ -55,9 +55,9 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "claw_wound",
-                    "mangled_leg",
-                    "mangled_tail"
+                    "claw-wound",
+                    "mangled leg",
+                    "mangled tail"
                 ]
             }
         ],
@@ -193,9 +193,9 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "torn_pelt",
+                    "torn pelt",
                     "scrapes",
-                    "small_cut"
+                    "small cut"
                 ],
                 "scars": [
                     "QUILLSIDE", "SCRATCHSIDE"
@@ -228,7 +228,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "mangled_tail"
+                    "mangled tail"
                 ],
                 "scars": [
                     "HALFTAIL", "MANTAIL", "NOTAIL", "TAILSCAR"
@@ -271,7 +271,7 @@
                 ],
                 "injuries": [
                     "burn",
-                    "severe_burn"
+                    "severe burn"
                 ]
             }
         ],
@@ -336,7 +336,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "severe_burn"
+                    "severe burn"
                 ]
             }
         ],
@@ -530,9 +530,9 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "torn_pelt",
+                    "torn pelt",
                     "scrapes",
-                    "small_cut"
+                    "small cut"
                 ],
                 "scars": [
                     "QUILLSIDE", "SCRATCHSIDE"
@@ -638,7 +638,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "water_in_lungs"
+                    "water in their lungs"
                 ]
             }
         ],
@@ -677,7 +677,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "water_in_lungs"
+                    "water in their lungs"
                 ]
             }
         ],
@@ -729,7 +729,7 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "water_in_lungs"
+                    "water in their lungs"
                 ]
             },
             {
@@ -738,7 +738,7 @@
                     "r_c"
                 ],
                 "injuries": [
-                    "dangerously_cold"
+                    "shivering"
                 ]
             }
         ],
@@ -787,8 +787,8 @@
                     "m_c"
                 ],
                 "injuries": [
-                    "mangled_leg",
-                    "bite_wound"
+                    "mangled leg",
+                    "bite-wound"
                 ]
             }
         ],
@@ -891,7 +891,7 @@
     "injury": [
         {
             "cats": ["m_c"],
-            "injuries": ["broken_bone"],
+            "injuries": ["broken bone"],
             "scars": []
         }
     ],
@@ -923,7 +923,7 @@
     "injury": [
         {
             "cats": ["m_c"],
-            "injuries": ["head_damage"],
+            "injuries": ["head damage"],
             "scars": []
         }
     ],

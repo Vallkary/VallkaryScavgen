@@ -16,8 +16,7 @@ There are 4 different JSON files for each card category. When adding a card, con
 |-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Origin      | Affects starting situation of the Clan, but has no ongoing effects.                                                                                   |
 | Environment | Affects the world and its resources. This could be seasonal, prey/herbs based, or some sort of effect applied to the cats from the world around them. |
-| Behavior    | A change to how the individual cats behave and interact with game mechanics.                                                                          |
-| Society     | A change to how the society functions as a whole.                                                                                                     |
+| Behavior    | A change to how the cats themselves behave and interact with game mechanics.                                                                          |
 | Danger      | An effect purely centered around hurting, killing, or otherwise placing the cats in dangerous situations.                                             |
 
 The structure for a singular card object is as follows:

@@ -30,7 +30,8 @@
                 "stat": {
                     "skill": [
                         "STORY,1"
-                    ]
+                    ],
+                    "trait": []
                 }
             },
             "r_c1": {
@@ -151,7 +152,7 @@
         ],
         "required_cat_types": {
             "patrol_cats": [
-                3,
+                4,
                 6
             ],
             "normal adult": [
@@ -160,16 +161,14 @@
             ]
         },
         "involved_cats": {
-            "s_c0": {
+            "p_l": {
                 "stat": {
                     "skill": [
                         "STORY,1",
                         "LORE,1"
-                    ]
-                },
-                "prior_abbreviation": [
-                    "any"
-                ]
+                    ],
+                    "trait": []
+                }
             }
         },
         "chance_of_success": 60,
@@ -193,7 +192,10 @@
                             "skill": [
                                 "STORY,1"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "p_l"
+                        ]
                     }
                 },
                 "exp_gained": 40,
@@ -262,7 +264,10 @@
                             "skill": [
                                 "LORE,1"
                             ]
-                        }
+                        },
+                        "prior_abbreviation": [
+                            "p_l"
+                        ]
                     }
                 },
                 "exp_gained": 40,

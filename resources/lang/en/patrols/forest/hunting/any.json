@@ -1,6 +1,6 @@
 [
     {
-        "event_id": "fst_hunt_porcupine_group1",
+        "event_id": "fst_hunt_porcupine1",
         "types": [
             "hunting"
         ],
@@ -10,7 +10,7 @@
         ],
         "required_cat_types": {
             "patrol_cats": [
-                2,
+                3,
                 6
             ]
         },
@@ -18,7 +18,7 @@
             "r_c0": {}
         },
         "chance_of_success": 10,
-        "patrol_art": "animals/fst_porcupinedanger1",
+        "patrol_art": "animals/animals/animals/fst_porcupinedanger1",
         "intro_strings": [
             "r_c0 encounters a porcupine, bristling with quills."
         ],
@@ -29,9 +29,14 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "The patrol examines the porcupine, eventually deciding that they shouldn't risk the potential injury it could cause.",
-                    "The porcupine rattles its quills viciously. The patrol heeds its warning and gives it space.",
-                    "r_c0 leaps back just as the porcupine whips its tail towards {PRONOUN/r_c0/object}! That was close! The patrol gives the porcupine a wide berth."
+                    "The patrol examines the porcupine, eventually deciding that they shouldn't risk the potential injury it could cause."
+                ],
+                "exp_gained": 10
+            },
+            {
+                "frequency": 1,
+                "strings": [
+                    "The porcupine rattles its quills viciously. The patrol heeds its warning and gives it space."
                 ],
                 "exp_gained": 10
             },
@@ -40,7 +45,6 @@
                 "strings": [
                     "s_c0 sets up an ambush, devising a clever plan to take the porcupine by surprise and attack it before it can whip its quills into anyone's pelt. The Clan will be impressed by this hefty fresh-kill."
                 ],
-                "exp_gained": 10,
                 "involved_cats": {
                     "s_c0": {
                         "prior_abbreviation": [
@@ -49,17 +53,12 @@
                         "stat": {
                             "skill": [
                                 "HUNTER,2",
-                                "CLEVER,2",
-                                "INSIGHTFUL,2",
-                                "FIGHTER,2"
-                            ],
-                            "trait": [
-                                "wise"
-                            ],
-                            "must_have_both": false
+                                "CLEVER,2"
+                            ]
                         }
                     }
                 },
+                "exp_gained": 10,
                 "relationship_changes": [
                     {
                         "cats_from": [
@@ -107,7 +106,6 @@
                 "strings": [
                     "s_c0 has the ingenious idea to follow the porcupine from a distance and collect dropped quills to bring back to camp. The quills could be woven into the Clan's defenses to strengthen them."
                 ],
-                "exp_gained": 10,
                 "involved_cats": {
                     "s_c0": {
                         "prior_abbreviation": [
@@ -120,15 +118,11 @@
                                 "strange",
                                 "thoughtful",
                                 "wise"
-                            ],
-                            "skill": [
-                                "CLEVER,1",
-                                "INSIGHTFUL,1"
-                            ],
-                            "must_have_both": false
+                            ]
                         }
                     }
                 },
+                "exp_gained": 10,
                 "relationship_changes": [
                     {
                         "cats_from": [
@@ -154,6 +148,13 @@
             {
                 "frequency": 4,
                 "strings": [
+                    "r_c0 leaps back just as the porcupine whips its tail towards {PRONOUN/r_c0/object}! That was close! The patrol gives the porcupine a wide berth."
+                ],
+                "exp_gained": 0
+            },
+            {
+                "frequency": 4,
+                "strings": [
                     "s_c0 gets closer to the porcupine, intending to impress the rest of the patrol with {PRONOUN/s_c0/poss} bravery. All the cats recoil as a horrible smell comes from the porcupine and they back off before it can charge at them.  The patrol returns to camp, the smelly evidence of their encounter still clinging to s_c0's pelt."
                 ],
                 "involved_cats": {
@@ -166,8 +167,7 @@
                                 "bold",
                                 "daring",
                                 "confident",
-                                "adventurous",
-                                "oblivious"
+                                "adventurous"
                             ]
                         }
                     }
@@ -196,23 +196,31 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "The porcupine whips around, digging the quills of its tail into s_c0! The patrol bolts away and returns to camp, s_c0 with a nose full of quills."
+                    "r_c0 doesn't react quickly enough to the porcupine's warning. It charges sideways at {PRONOUN/r_c0/object}, its quills ready to impale! r_c0 is badly injured and dies a few days later from the wounds."
                 ],
                 "exp_gained": 0,
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ]
+                "death": [
+                    {
+                        "cats": [
+                            "r_c0"
+                        ],
+                        "history": "m_c was killed by an angry porcupine while on patrol."
                     }
-                },
+                ]
+            },
+            {
+                "frequency": 3,
+                "strings": [
+                    "The porcupine whips around, digging the quills of its tail into r_c0! The patrol bolts away and returns to camp, r_c0 with a nose full of quills."
+                ],
+                "exp_gained": 0,
                 "condition": [
                     {
                         "cats": [
-                            "s_c0"
+                            "r_c0"
                         ],
                         "condition": [
-                            "porcupine_quilled"
+                            "quilled by a porcupine"
                         ],
                         "scar_pool_override": [
                             "QUILLSCRATCH"
@@ -221,33 +229,11 @@
                         "death_history": "m_c died after being quilled by a porcupine on patrol."
                     }
                 ]
-            },
-            {
-                "frequency": 2,
-                "strings": [
-                    "s_c0 doesn't react quickly enough to the porcupine's warning. It charges sideways at {PRONOUN/s_c0/object}, its quills ready to impale! s_c0 is badly injured and dies a few days later from the wounds."
-                ],
-                "exp_gained": 0,
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ]
-                    }
-                },
-                "death": [
-                    {
-                        "cats": [
-                            "s_c0"
-                        ],
-                        "history": "m_c was killed by an angry porcupine while on patrol."
-                    }
-                ]
             }
         ]
     },
     {
-        "event_id": "fst_hunt_porcupine_solo1",
+        "event_id": "fst_hunt_porcupine2",
         "types": [
             "hunting"
         ],
@@ -258,7 +244,7 @@
         "required_cat_types": {
             "patrol_cats": [
                 1,
-                1
+                2
             ]
         },
         "chance_of_success": 10,
@@ -267,14 +253,20 @@
             "p_l encounters a porcupine, bristling with quills."
         ],
         "decline_strings": [
-            "p_l steers clear of the porcupine, uninterested in confronting this creature."
+            "The patrol steers clear of the porcupine. They don't have enough cats to confront this creature safely."
         ],
         "success_outcomes": [
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l examines the porcupine, eventually deciding that {PRONOUN/p_l/subject} shouldn't risk the potential injury it could cause.",
-                    "The porcupine rattles its quills viciously. p_l heeds its warning and gives it space."
+                    "The patrol examines the porcupine, eventually deciding that they shouldn't risk the potential injury it could cause."
+                ],
+                "exp_gained": 30
+            },
+            {
+                "frequency": 1,
+                "strings": [
+                    "The porcupine rattles its quills viciously. The patrol heeds its warning and gives it space."
                 ],
                 "exp_gained": 30
             },
@@ -290,20 +282,31 @@
                         ],
                         "stat": {
                             "skill": [
-                                "HUNTER,2",
-                                "CLEVER,2",
-                                "INSIGHTFUL,2",
-                                "FIGHTER,2"
-                            ],
-                            "trait": [
-                                "wise"
-                            ],
-                            "must_have_both": false
+                                "HUNTER,3",
+                                "CLEVER,3"
+                            ]
                         }
                     }
                 },
                 "exp_gained": 30,
                 "relationship_changes": [
+                    {
+                        "cats_from": [
+                            "patrol_cats"
+                        ],
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "values": [
+                            "respect",
+                            "like"
+                        ],
+                        "mutual": false,
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from was impressed by cat_to's clever plan to catch a porcupine."
+                        }
+                    },
                     {
                         "cats_from": [
                             "some_clan"
@@ -345,12 +348,7 @@
                                 "strange",
                                 "thoughtful",
                                 "wise"
-                            ],
-                            "skill": [
-                                "CLEVER,1",
-                                "INSIGHTFUL,1"
-                            ],
-                            "must_have_both": false
+                            ]
                         }
                     }
                 },
@@ -402,7 +400,7 @@
             {
                 "frequency": 3,
                 "strings": [
-                    "The porcupine whips around, digging the quills of its tail into p_l! p_l returns to camp with a nose full of quills and a wounded pride."
+                    "The porcupine whips around, digging the quills of its tail into r_c0! p_l returns to camp with a nose full of quills and a wounded pride."
                 ],
                 "exp_gained": 0,
                 "condition": [
@@ -411,7 +409,7 @@
                             "p_l"
                         ],
                         "condition": [
-                            "porcupine_quilled"
+                            "quilled by a porcupine"
                         ],
                         "scar_pool_override": [
                             "QUILLSCRATCH"
@@ -420,6 +418,54 @@
                         "death_history": "m_c died after being quilled by a porcupine on patrol."
                     }
                 ]
+            }
+        ]
+    },
+    {
+        "event_id": "fst_hunt_rabbitburrow1",
+        "types": [
+            "hunting"
+        ],
+        "frequency": 4,
+        "location": [
+            "forest"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [
+                1,
+                6
+            ]
+        },
+        "chance_of_success": 50,
+        "patrol_art": "hunt_general_intro",
+        "intro_strings": [
+            "While hunting, p_l comes across a rabbit burrow."
+        ],
+        "decline_strings": [
+            "p_l decides to ignore the burrow."
+        ],
+        "success_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "p_l catches the rabbit hiding in its burrow."
+                ],
+                "exp_gained": 10,
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_large"
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 4,
+                "strings": [
+                    "The burrow is abandoned, with no prey to be found in there."
+                ],
+                "exp_gained": 0
             }
         ]
     },
@@ -3319,7 +3365,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "torn_pelt"
+                            "torn pelt"
                         ]
                     }
                 ]
@@ -6948,7 +6994,7 @@
                             "s_c0"
                         ],
                         "condition": [
-                            "bite_wound"
+                            "bite-wound"
                         ],
                         "scar_pool_override": [
                             "NECKBITE"
@@ -9447,7 +9493,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "dislocated_joint"
+                            "dislocated joint"
                         ]
                     }
                 ]
@@ -9618,7 +9664,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "severe_headache"
+                            "severe headache"
                         ]
                     }
                 ]
@@ -10274,7 +10320,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "dislocated_joint"
+                            "dislocated joint"
                         ]
                     }
                 ]

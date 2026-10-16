@@ -320,9 +320,7 @@ class Patrol:
 
         self.patrol_event = chosen_patrol
 
-    def _decide_if_romantic(
-        self, romantic_event: Optional[PatrolEvent], involved_cats: dict
-    ) -> bool:
+    def _decide_if_romantic(self, romantic_event: Optional[PatrolEvent]) -> bool:
         """
         Finds the chance of this patrol being romantic based on the cats involved and their current relationship with each other
         :return: True if patrol should be romantic, False otherwise
@@ -346,10 +344,10 @@ class Patrol:
                     Cat,
                     block["cats_from"],
                     event=self,
-                    involved_cats=involved_cats,
+                    involved_cats=self.involved_cats,
                 )
                 cats_to = gather_cat_objects(
-                    Cat, block["cats_to"], event=self, involved_cats=involved_cats
+                    Cat, block["cats_to"], event=self, involved_cats=self.involved_cats
                 )
                 # now affect the chance depending on the compatibility
                 for c in cats_from:
@@ -435,6 +433,16 @@ class Patrol:
 
         return chosen_patrol
 
+    def _clear_used_and_retry(
+        self, possible_patrols: List[PatrolEvent], find_romance: bool = False
+    ):
+        """
+        Clears used patrols and attempts to get a new valid patrol
+        """
+        Patrol.used_patrols["romance" if find_romance else "normal"].clear()
+
+        return self._set_valid_patrol(possible_patrols, find_romance)
+
     def _set_valid_patrol(
         self, possible_patrols: List[PatrolEvent], find_romance: bool = False
     ) -> Optional[PatrolEvent]:
@@ -466,18 +474,21 @@ class Patrol:
                     return None
 
                 # if we couldn't find a patrol, then we need to clear the used_patrols and try again
-                Patrol.used_patrols["romance" if find_romance else "normal"].clear()
-                patrols_to_test = possible_patrols.copy()
+                chosen_patrol = self._clear_used_and_retry(
+                    possible_patrols, find_romance=find_romance
+                )
+            else:
+                # otherwise, let's set our involved cats and move on with this patrol!
+                self.involved_cats = involved_cats
+                self.patrol_event = chosen_patrol
 
         if find_romance:
-            if not self._decide_if_romantic(chosen_patrol, involved_cats):
+            if not self._decide_if_romantic(chosen_patrol):
                 return None
             Patrol.used_patrols["romance"].append(chosen_patrol.event_id)
         else:
             Patrol.used_patrols["normal"].append(chosen_patrol.event_id)
 
-        self.patrol_event = chosen_patrol
-        self.involved_cats = involved_cats
         return chosen_patrol
 
     @staticmethod
@@ -522,7 +533,7 @@ class Patrol:
         chosen_success, self.outcome_cats["success"] = get_valid_event(
             primary_cat=self.involved_cats["p_l"],
             involved_cats=self.involved_cats,
-            interactable_cats=self.involved_cats["patrol_cats"],
+            interactable_cats=[c for c in self.involved_cats["patrol_cats"]],
             possible_events=success_outcomes,
             other_clan=self.other_clan,
             ensured_id=debug_outcome,
@@ -537,7 +548,11 @@ class Patrol:
         chosen_failure, self.outcome_cats["failure"] = get_valid_event(
             primary_cat=self.involved_cats["p_l"],
             involved_cats=self.involved_cats,
-            interactable_cats=self.involved_cats["patrol_cats"],
+            interactable_cats=[
+                c
+                for c in self.involved_cats["patrol_cats"]
+                if c != self.involved_cats["p_l"]
+            ],
             possible_events=fail_outcomes,
             other_clan=self.other_clan,
             ensured_id=debug_outcome,
@@ -613,25 +628,13 @@ class Patrol:
             f"Outcome Frequency: {chosen_outcome.frequency} | Outcome Weight: {chosen_outcome.weight}"
         )
 
-        processed_text, results, rel_results = handle_consequences.execute_outcome(
+        # Run the chosen outcome
+        return handle_consequences.execute_outcome(
             chosen_outcome,
             self.outcome_cats["success" if success else "failure"],
             self.other_clan,
             self.chosen_poi,
-        )
-        final_results = []
-        for r in results.values():
-            # filter out the "empty" values
-            if r:
-                final_results.append(r)
-
-        # Run the chosen outcome
-        return (
-            processed_text,
-            "\n".join(final_results),
-            rel_results,
-            self.get_patrol_art(chosen_outcome),
-        )
+        ) + (self.get_patrol_art(chosen_outcome),)
 
     def calculate_success(
         self, success_outcome: TextPoolEvent, fail_outcome: TextPoolEvent
@@ -667,10 +670,7 @@ class Patrol:
         for abbr, constraints in success_outcome.involved_cats.items():
             # if this is present, then we know a cat must fulfill it
             if stat_block := constraints.get("stat"):
-                cat = self.outcome_cats["success"].get(abbr)
-                if not cat:
-                    # likely an n_c cat that hasn't been made yet
-                    continue
+                cat = self.outcome_cats["success"][abbr]
                 if "skill" in stat_block:
                     success_chance += get_config(
                         "patrol_generation.skill_cat_modifier"
@@ -797,8 +797,6 @@ class Patrol:
             file_name = (
                 self.patrol_event.patrol_art if not outcome else outcome.outcome_art
             )
-            if file_name == "POI":
-                file_name = f"backgrounds/poi_{self.chosen_poi}"
 
         if not isinstance(file_name, str) or not path_exists(
             f"{root_dir}{file_name}.png"

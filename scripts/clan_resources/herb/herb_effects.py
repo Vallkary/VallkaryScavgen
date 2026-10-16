@@ -5,4 +5,3 @@ class HerbEffect(StrEnum):
     MORTALITY = "mortality"
     DURATION = "duration"
     RISK = "risks"
-    PROGRESSION = "progression"

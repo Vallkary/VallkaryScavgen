@@ -67,6 +67,8 @@ class CatRank(StrEnum):
     DEPUTY = "deputy"
     LEADER = "leader"
     ELDER = "elder"
+    TEMPLAR = "templar"
+    DISCIPLE = "disciple"
 
     # outsider ranks
     LONER = "loner"

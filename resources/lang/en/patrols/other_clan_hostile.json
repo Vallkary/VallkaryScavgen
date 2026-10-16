@@ -1549,7 +1549,7 @@
                             "p_l"
                         ],
                         "condition": [
-                            "grief_stricken"
+                            "grief stricken"
                         ]
                     }
                 ],
@@ -1652,7 +1652,7 @@
                             "n_c0"
                         ],
                         "condition": [
-                            "grief_stricken"
+                            "grief stricken"
                         ],
                         "scar_history": "m_c was scarred by {PRONOUN/m_c/poss} mate's Clanmates.",
                         "death_history": "m_c died from injuries inflicted by {PRONOUN/m_c/poss} mate's Clanmates."
@@ -1738,8 +1738,8 @@
                             "n_c0"
                         ],
                         "condition": [
-                            "grief_stricken",
-                            "lasting_grief"
+                            "grief stricken",
+                            "lasting grief"
                         ],
                         "death_history": "m_c was killed by {PRONOUN/m_c/poss} mate's Clanmates."
                     }
@@ -1866,7 +1866,7 @@
                             "n_c2"
                         ],
                         "condition": [
-                            "grief_stricken"
+                            "grief stricken"
                         ]
                     }
                 ],
@@ -2014,7 +2014,7 @@
                             "p_l"
                         ],
                         "condition": [
-                            "grief_stricken"
+                            "grief stricken"
                         ],
                         "death_history": "m_c was killed by {PRONOUN/m_c/poss} mate's Clanmates."
                     }
@@ -3364,7 +3364,7 @@
                 "involved_cats": {
                     "s_c0": {
                         "prior_abbreviation": [
-                            "-r_c0"
+                            "any"
                         ],
                         "stat": {
                             "trait": [
@@ -3618,7 +3618,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "cat_bite"
+                            "cat bite"
                         ],
                         "scar_pool_override": [
                             "LEGBITE"
@@ -3962,8 +3962,8 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "bite_wound",
-                            "torn_pelt"
+                            "bite-wound",
+                            "torn pelt"
                         ],
                         "scar_history": "m_c followed the scent of a trespassing cat and was scarred by a dog.",
                         "death_history": "m_c died of injuries inflicted by a dog."
@@ -4149,8 +4149,8 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "bite_wound",
-                            "mangled_tail"
+                            "bite-wound",
+                            "mangled tail"
                         ],
                         "scar_history": "m_c followed the scent of a trespassing cat and was scarred by a dog.",
                         "death_history": "m_c died of injuries inflicted by a dog."
@@ -4563,13 +4563,21 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l comes across a o_c_n apprentice on the wrong side of the border and holding prey. {PRONOUN/p_l/subject/CAP} {VERB/p_l/see/sees} the young cat off with a furious swipe of {PRONOUN/p_l/poss} claws, and then {VERB/p_l/bring/brings} the prey back to c_n camp to report the incident to the deputy."
+                    "p_l comes across a o_c_n apprentice on the wrong side of the border and holding prey. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/see/sees} the young cat off with a furious swipe of {PRONOUN/p_l/poss} claws, and then {VERB/p_l/bring/brings} the prey back to c_n camp to report the incident to the deputy."
                 ],
                 "required_cat_types": {
                     "warrior": [
                         1,
                         1
                     ]
+                },
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {}
+                    }
                 },
                 "exp_gained": 0,
                 "reputation_changes": {
@@ -5306,13 +5314,21 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l comes across a o_c_n apprentice on the wrong side of the border and holding prey. {PRONOUN/p_l/subject/CAP} {VERB/p_l/see/sees} the young cat off with a furious swipe of {PRONOUN/p_l/poss} claws, and then {VERB/p_l/bring/brings} the prey back to c_n camp to report the incident to the deputy."
+                    "p_l comes across a o_c_n apprentice on the wrong side of the border and holding prey. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/see/sees} the young cat off with a furious swipe of {PRONOUN/p_l/poss} claws, and then {VERB/p_l/bring/brings} the prey back to c_n camp to report the incident to the deputy."
                 ],
                 "required_cat_types": {
                     "warrior": [
                         1,
                         1
                     ]
+                },
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {}
+                    }
                 },
                 "exp_gained": 0,
                 "reputation_changes": {
@@ -6049,13 +6065,21 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l comes across a o_c_n apprentice on the wrong side of the border and holding prey. {PRONOUN/p_l/subject/CAP} {VERB/p_l/see/sees} the young cat off with a furious swipe of {PRONOUN/p_l/poss} claws, and then {VERB/p_l/bring/brings} the prey back to c_n camp to report the incident to the deputy."
+                    "p_l comes across a o_c_n apprentice on the wrong side of the border and holding prey. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/see/sees} the young cat off with a furious swipe of {PRONOUN/p_l/poss} claws, and then {VERB/p_l/bring/brings} the prey back to c_n camp to report the incident to the deputy."
                 ],
                 "required_cat_types": {
                     "warrior": [
                         1,
                         1
                     ]
+                },
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {}
+                    }
                 },
                 "exp_gained": 0,
                 "reputation_changes": {
@@ -6792,13 +6816,21 @@
             {
                 "frequency": 4,
                 "strings": [
-                    "p_l comes across a o_c_n apprentice on the wrong side of the border and holding prey. {PRONOUN/p_l/subject/CAP} {VERB/p_l/see/sees} the young cat off with a furious swipe of {PRONOUN/p_l/poss} claws, and then {VERB/p_l/bring/brings} the prey back to c_n camp to report the incident to the deputy."
+                    "p_l comes across a o_c_n apprentice on the wrong side of the border and holding prey. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/see/sees} the young cat off with a furious swipe of {PRONOUN/p_l/poss} claws, and then {VERB/p_l/bring/brings} the prey back to c_n camp to report the incident to the deputy."
                 ],
                 "required_cat_types": {
                     "warrior": [
                         1,
                         1
                     ]
+                },
+                "involved_cats": {
+                    "s_c0": {
+                        "prior_abbreviation": [
+                            "any"
+                        ],
+                        "stat": {}
+                    }
                 },
                 "exp_gained": 0,
                 "reputation_changes": {
@@ -8003,8 +8035,8 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "bite_wound",
-                            "torn_pelt"
+                            "bite-wound",
+                            "torn pelt"
                         ],
                         "scar_history": "m_c carries a scar, and lingering resentment, from when a Clanmate failed to watch {PRONOUN/m_c/poss} back during a border altercation.",
                         "death_history": "m_c died to wounds inflicted by enemy warriors."
@@ -8362,8 +8394,8 @@
                             "battle_injury",
                             "minor_injury",
                             "small_bite_injury",
-                            "torn_pelt",
-                            "torn_ear"
+                            "torn pelt",
+                            "torn ear"
                         ],
                         "scar_history": "m_c carries the scars o_c_n gave them, a permanent reminder of the Clan's hostilities.",
                         "death_history": "m_c died of injuries inflicted by an enemy warrior."

@@ -14,6 +14,8 @@ class Rank(Enum):
     DEPUTY = "deputy"
     LEADER = "leader"
     ELDER = "elder"
+    TEMPLAR = "templar"
+    DISCIPLE = "disciple"
 
     # outsider ranks
     LONER = "loner"

@@ -1,6 +1,7 @@
-import i18n
+import os
 
-from scripts.game_structure.constants import HERBS
+import ujson
+import i18n
 
 
 class Herb:
@@ -33,3 +34,9 @@ class Herb:
         rarity_dict = self._herb_dict.get("rarity", {})
 
         return rarity_dict.get(biome.casefold(), {}).get(season.casefold(), 0)
+
+
+with open(
+    os.path.normpath("resources/dicts/herb_info.json"), "r", encoding="utf-8"
+) as read_file:
+    HERBS = ujson.loads(read_file.read())

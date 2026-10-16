@@ -6,11 +6,18 @@
         ],
         "relationship_changes": [
             {
-                "cats_from": ["r_c"],
-                "cats_to": ["m_c"],
+                "cats_from": [
+                    "r_c"
+                ],
+                "cats_to": [
+                    "m_c"
+                ],
                 "mutual": false,
-                "values": ["like"],
+                "values": [
+                    "like"
+                ],
                 "amount": 5
-            }]
+            }
+        ]
     }
 ]

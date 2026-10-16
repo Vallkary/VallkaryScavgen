@@ -106,6 +106,7 @@ class LoadCatFactory(BaseCatFactory):
             "gender_dict": gender,
             "pelt": pelt,
             "moons": kwargs["moons"],
+            "healthstat": kwargs.get("healthstat"),
             "status": status,
             "backstory": backstory,
             "skills": skills,

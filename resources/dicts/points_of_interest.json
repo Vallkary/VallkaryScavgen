@@ -27,7 +27,7 @@
     "moon_cave": {
         "category": "moonplace",
         "biome": ["any"],
-        "tags": ["cave", "rocks", "maze"]
+        "tags": ["cave", "rocks"]
     },
     "moon_mothermouth": {
         "category": "moonplace",
@@ -37,91 +37,82 @@
     "terrain_lake": {
         "category": "terrain",
         "biome": ["any"],
-        "tags": ["water:still", "water:flowing", "prey:water", "prey:flying", "prey:bird"]
+        "tags": ["water:still", "water:flowing", "prey:water", "prey:flying"]
     },
     "terrain_fordriver": {
         "category": "terrain",
         "biome": ["any"],
-        "tags": ["water:flowing", "prey:water", "prey:flying", "prey:bird"]
+        "tags": ["water:flowing", "prey:water", "prey:flying"]
     },
     "terrain_carrionplace": {
         "category": "terrain",
         "biome": ["forest"],
-        "tags": ["Twolegs:present", "danger:tainted", "prey:ground", "danger:unstable", "covered", "maze"]
+        "tags": ["Twolegs:present", "tainted", "prey:ground", "unstable", "covered"]
     },
     "terrain_sunningrocks": {
         "category": "terrain",
         "biome": ["any"],
-        "tags": ["rocks", "high_ground"]
+        "tags": ["rocks"]
     },
     "terrain_well": {
         "category": "terrain",
         "biome": ["any"],
-        "tags": ["Twolegs:abandoned", "water:still", "danger:fall_risk", "high_ground"]
+        "tags": ["Twolegs:abandoned", "water:still", "fall_risk"]
     },
     "terrain_twolegplace": {
         "category": "terrain",
         "biome": ["any"],
-        "tags": ["Twolegs:present", "prey:ground", "danger:tainted", "maze"]
+        "tags": ["Twolegs:present", "prey:ground", "tainted"]
     },
     "terrain_horseplace": {
         "category": "terrain",
         "biome": ["plains"],
-        "tags": ["Twolegs:present", "prey:ground", "prey:flying", "prey:bird", "covered", "maze"]
+        "tags": ["Twolegs:present", "prey:ground", "prey:flying"]
     },
     "terrain_deepforest": {
         "category": "terrain",
         "biome": ["forest"],
-        "tags": ["trees", "prey:ground", "prey:flying", "prey:bird", "maze"]
+        "tags": ["trees", "prey:ground", "prey:flying"]
     },
     "terrain_windswepttree": {
         "category": "terrain",
         "biome": ["plains"],
-        "tags": ["trees", "prey:ground", "prey:flying", "prey:bird", "high_ground"]
+        "tags": ["trees", "prey:ground", "prey:flying"]
     },
     "terrain_hugeboulder": {
         "category": "terrain",
         "biome": ["forest"],
-        "tags": ["rocks", "prey:ground", "high_ground"]
+        "tags": ["rocks", "prey:ground", "covered"]
     },
     "terrain_waterfall": {
         "category": "terrain",
         "biome": ["mountainous", "forest"],
-        "tags": ["water:flowing", "prey:water", "rocks", "danger:fall_risk"]
+        "tags": ["water:flowing", "prey:water", "rocks", "fall_risk"]
     },
     "terrain_gullcliffs": {
         "category": "terrain",
         "biome": ["beach"],
-        "tags": ["prey:flying", "prey:bird", "nests", "danger:fall_risk", "danger:unstable"]
+        "tags": ["prey:flying", "prey:eggs", "nests", "fall_risk", "unstable", "water:ocean"]
     },
     "terrain_eaglenest": {
         "category": "terrain",
         "biome": ["mountainous"],
-        "tags": ["nests"]
+        "tags": ["prey:eggs", "nests"]
     },
     "terrain_rookery": {
         "category": "terrain",
         "biome": ["any"],
-        "tags": ["prey:flying", "prey:bird", "nests", "trees"]
+        "tags": ["prey:flying", "prey:eggs", "nests", "trees"]
     },
     "terrain_batcaves": {
         "category": "terrain",
         "biome": ["any"],
-        "tags": ["prey:flying", "danger:tainted", "cave", "covered", "maze"]
+        "tags": ["prey:flying", "tainted", "cave", "covered"]
     },
     "terrain_carrionbeach": {
         "category": "terrain",
         "biome": ["beach"],
-        "tags": ["Twolegs:present", "danger:tainted", "prey:water", "water:ocean", "maze"]
-    },
-    "terrain_abandonednest": {
-        "category": "terrain",
-        "biome": ["any"],
-        "tags": ["Twolegs:abandoned", "prey:ground", "covered", "danger:unstable", "high_ground", "maze"]
-    },
-    "terrain_thunderpath": {
-        "category": "terrain",
-        "biome": ["any"],
-        "tags": ["Twolegs:present", "danger"]
+        "tags": ["Twolegs:present", "tainted", "prey:water", "water:ocean"]
     }
+
 }

@@ -25,7 +25,6 @@
         "involved_cats": {
             "m_c": {
                 "age": [
-                    "young adult",
                     "adult",
                     "senior adult",
                     "senior"
@@ -36,7 +35,6 @@
                     "rogue"
                 ],
                 "age": [
-                    "young adult",
                     "adult",
                     "senior adult",
                     "senior"
@@ -59,9 +57,7 @@
         "involved_cats": {
             "r_c": {
                 "status": [
-                    "warrior",
-                    "deputy",
-                    "leader"
+                    "any"
                 ],
                 "group": [
                     "-afterlife",

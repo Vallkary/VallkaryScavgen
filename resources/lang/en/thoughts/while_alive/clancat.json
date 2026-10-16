@@ -18,7 +18,6 @@
             "Is wondering if there are Clans other than the ones around {PRONOUN/m_c/poss} area",
             "Is wondering if StarClan is watching over cats outside the Clans",
             "Is tidying up camp",
-            "Is looking around camp",
             "Just can't find anything appetizing on the fresh-kill pile",
             "Is watching the breeze blow around the camp"
         ]
@@ -403,12 +402,23 @@
         }
     },
     {
+        "event_id": "gen_newleaf_clan",
+        "season": [
+            "newleaf"
+        ],
+        "strings": [
+            "Enjoys the warmth of newleaf",
+            "Is relieved leaf-bare is finally over",
+            "Is soaking in the newleaf warmth"
+        ]
+    },
+    {
         "event_id": "gen_greenleaf_clan",
         "season": [
             "greenleaf"
         ],
         "strings": [
-            "Stays out of the clearing to hide from the sun"
+            "Enjoys the warmth of greenleaf"
         ]
     },
     {
@@ -418,6 +428,7 @@
         ],
         "strings": [
             "Took a nap in the clearing and woke up under a blanket of snow",
+            "Can't wait for newleaf",
             "Is cleaning the clearing of snow"
         ]
     },
@@ -433,9 +444,7 @@
             "Disappeared all day to explore the territory",
             "Promises {PRONOUN/m_c/poss} Clanmates {PRONOUN/m_c/subject} won't do anything dangerous",
             "Wonders about species of prey beyond the border",
-            "Wonders about types of plants beyond the border",
-            "Volunteers to explore unclaimed territory to help expand c_n's borders",
-            "Explores past the border when nobody is watching"
+            "Wonders about types of plants beyond the border"
         ],
         "involved_cats": {
             "m_c": {
@@ -505,9 +514,7 @@
             "Is daydreaming about a Clan celebration in {PRONOUN/m_c/poss} honor",
             "Offers to help {PRONOUN/m_c/poss} Clanmates with their duties",
             "Considers spending the whole day hunting on {PRONOUN/m_c/poss} own",
-            "Encourages every cat to help fortify the dens",
-            "Daydreams of establishing a whole new Clan",
-            "Daydreams about beating a whole horde of rogues with one paw tied behind {PRONOUN/m_c/poss} back"
+            "Encourages every cat to help fortify the dens"
         ],
         "involved_cats": {
             "m_c": {
@@ -595,6 +602,7 @@
             "Tells the warriors to get ready for a battle",
             "Wonders if training in the Dark Forest is really that bad",
             "Started a fight with a fellow Clanmate",
+            "Licks fresh-kill blood off {PRONOUN/m_c/poss} lips a little too intently",
             "Has been glaring at a certain cat in camp with an odd look in {PRONOUN/m_c/poss} eye",
             "Pictures a glorious war breaking out",
             "Would kill any cat that posed a threat to c_n"
@@ -666,9 +674,7 @@
             "Tells a Clanmate to their face that their pelt has been looking dull lately",
             "Takes over a patrol that {PRONOUN/m_c/subject} {VERB/m_c/were/was}n't assigned to lead",
             "Pokes {PRONOUN/m_c/poss} head into the leader's den",
-            "Snatches up a piece of prey right out from under {PRONOUN/m_c/poss} Clanmate's nose",
-            "Removes a harmless snake from camp",
-            "Daydreams about beating a whole horde of rogues with one paw tied behind {PRONOUN/m_c/poss} back"
+            "Snatches up a piece of prey right out from under {PRONOUN/m_c/poss} Clanmate's nose"
         ],
         "involved_cats": {
             "m_c": {
@@ -734,8 +740,10 @@
             "Is sitting quietly on the far side of camp",
             "Is humming a soothing tune to {PRONOUN/m_c/self} as {PRONOUN/m_c/subject} {VERB/m_c/work/works}",
             "Is offering gentle advice to a frustrated Clanmate",
+            "Is lining {PRONOUN/m_c/poss} nest with lavender",
             "Never fails to offer comfort to {PRONOUN/m_c/poss} Clanmates",
             "Calmly takes the lead while some Clanmates argue over this and that",
+            "Takes a deep breath and doesn't let a mean comment get to {PRONOUN/m_c/object}",
             "Reacts graciously to r_c bossing {PRONOUN/m_c/object} around",
             "Wonders how lasting peace could be achieved between the Clans"
         ],
@@ -757,6 +765,7 @@
     {
         "event_id": "careful_clan_gen",
         "strings": [
+            "Double-checks {PRONOUN/m_c/poss} nest for burrs",
             "Pads back and forth across the camp",
             "Helps reinforce the nursery walls",
             "Helps reinforce the camp walls",
@@ -823,6 +832,7 @@
             "Winked playfully at a Clanmate from across the clearing!",
             "Has received several invitations to share tongues... and is deciding which to take",
             "Is basking in a sunbeam in the camp clearing",
+            "Is this moon's heartthrob",
             "Has recently given a wonderful speech to fellow Clanmates, boosting morale",
             "Spends all day chatting and laughing with {PRONOUN/m_c/poss} Clanmates",
             "Forgot where {PRONOUN/m_c/subject} put something, and every other cat offers to help {PRONOUN/m_c/object} find it",
@@ -846,9 +856,13 @@
         "strings": [
             "Is chasing a butterfly around the camp",
             "Is giggling about Clan drama with friends",
+            "Is gnawing busily on a small bone",
+            "Is batting at a ball of moss",
             "Makes immature jokes all day, leaving everyone else rolling their eyes",
             "Doesn't want to share a piece of fresh-kill",
+            "Wishes {PRONOUN/m_c/subject} could still get badger rides",
             "Sulks after r_c takes the piece of prey {PRONOUN/m_c/subject} secretly wanted",
+            "Convinces r_c to play moss-ball with {PRONOUN/m_c/object}",
             "Chases a fly around camp, nearly crashing into r_c"
         ],
         "involved_cats": {
@@ -896,7 +910,7 @@
     {
         "event_id": "silly_to_living_clan_kit",
         "strings": [
-            "Hides from the rest of the Clan with r_c"
+            "Plays moss ball with r_c"
         ],
         "involved_cats": {
             "m_c": {
@@ -920,6 +934,9 @@
     {
         "event_id": "cold_clan_gen",
         "strings": [
+            "Responds to a stupid comment with a sharp hiss",
+            "Walks away from a conversation that bored {PRONOUN/m_c/object}",
+            "Wonders why others snap back at {PRONOUN/m_c/object}",
             "Notices that {PRONOUN/m_c/poss} Clanmates have been nervous around {PRONOUN/m_c/object} lately",
             "Doesn't say thank you when offered a piece of fresh-kill",
             "Turns away without saying a word when a Clanmate vents to {PRONOUN/m_c/object}",
@@ -998,26 +1015,30 @@
         "event_id": "compassionate_clan_gen",
         "strings": [
             "Spends time with a grieving Clanmate today",
+            "Listens patiently to r_c's confidently wrong opinions",
             "Let {PRONOUN/m_c/poss} Clanmate have the last piece of fresh-kill on the pile this morning",
             "Is pleased by how well the Clan is looking after one another as of late",
             "Helps a struggling Clanmate",
             "Lets a Clanmate cry on {PRONOUN/m_c/poss} shoulder",
             "Makes sure to check on a Clanmate who's been having a rough time",
+            "Quickly forgives somebody after they snapped at {PRONOUN/m_c/object}",
             "Spends some extra time thanking StarClan for the prey today",
             "Is waiting until everyone has eaten to take from the fresh-kill pile",
             "Is patiently standing guard outside of camp",
             "Is winning a staring contest against a Clanmate",
+            "Is listening to a story {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} heard many, many times",
             "Offers to help Clanmates with their duties",
             "Is the only cat not bothered by a snoring Clanmate",
             "Is laughing at a Clanmate's joke, even though {PRONOUN/m_c/subject} didn't find it funny",
             "Helps gather herbs all day",
             "Gives some plump fresh-kill to a Clanmate instead",
+            "Offers a helping paw, even after a night of bad sleep",
             "Is listening to the woes of a fellow Clanmate",
             "Is doing some apprentice tasks around camp, to help lighten the load",
             "Is keeping the injured cats company",
             "Can't stop smiling because of another Clanmate's good mood",
-            "Purrs contently at the thought of {PRONOUN/m_c/poss} Clanmates being happy",
-            "Believes in {PRONOUN/m_c/poss} Clanmates"
+            "Says sorry before {PRONOUN/m_c/subject} {VERB/m_c/bite/bites} into {PRONOUN/m_c/poss} fresh-kill",
+            "Purrs contently at the thought of {PRONOUN/m_c/poss} Clanmates being happy"
         ],
         "involved_cats": {
             "m_c": {
@@ -1127,6 +1148,12 @@
         "event_id": "competitive_clan_gen",
         "strings": [
             "Pesters other cats to join {PRONOUN/m_c/poss} made-up challenges around camp",
+            "Challenges r_c to a staring contest",
+            "Challenges r_c to a staring contest and wins",
+            "Challenges r_c to a staring contest and loses",
+            "Has been a good sport about losing to r_c",
+            "Has been a bit of a bad sport about losing to r_c",
+            "Challenges r_c to a race",
             "Challenges {PRONOUN/m_c/poss} Clanmates to a scavenger hunt",
             "Challenges {PRONOUN/m_c/poss} Clanmates to a scavenger hunt and wins",
             "Challenges {PRONOUN/m_c/poss} Clanmates to a scavenger hunt and loses",
@@ -1134,7 +1161,7 @@
             "Is lecturing about something someone said wrong offpawedly",
             "Watches r_c do a chore {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} really good at to see how {PRONOUN/m_c/subject} can improve",
             "Totals up how much prey {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} caught this moon",
-            "Daydreams about beating a whole horde of rogues with one paw tied behind {PRONOUN/m_c/poss} back"
+            "Shows off {PRONOUN/m_c/poss} hunting crouch to r_c"
         ],
         "involved_cats": {
             "m_c": {
@@ -1159,8 +1186,7 @@
             "Doesn't think twice before correcting a Clanmate on something minor",
             "Offers tips to every cat in the Clan",
             "Feels uncertain about {PRONOUN/m_c/poss} role for a moment, then brushes it off easily",
-            "Asks for extra work, sure that {PRONOUN/m_c/subject} can handle it",
-            "Believes in {PRONOUN/m_c/poss} Clanmates"
+            "Asks for extra work, sure that {PRONOUN/m_c/subject} can handle it"
         ],
         "involved_cats": {
             "m_c": {
@@ -1207,11 +1233,8 @@
             "Is always five steps ahead of {PRONOUN/m_c/poss} Clanmates",
             "Carefully curates {PRONOUN/m_c/poss} appearance to be the most dazzling in the Clan",
             "Got a Clanmate to do {PRONOUN/m_c/poss} work, never intending to pay {PRONOUN/r_c/object} back for it",
-            "Swindles {PRONOUN/m_c/poss} way into an extra piece of fresh-kill",
-            "Convinced a Clanmate to side with {PRONOUN/m_c/object} on something",
-            "Schemes to get {PRONOUN/m_c/poss} Clanmates to do what {PRONOUN/m_c/subject} {VERB/m_c/wish/wishes} indirectly",
-            "Has the whole Clan stumped with a riddle {PRONOUN/m_c/subject} came up with",
-            "Lied about an injury to get out of doing chores"
+            "Persuades r_c to back {PRONOUN/m_c/object} up in a lie",
+            "Swindles {PRONOUN/m_c/poss} way into an extra piece of fresh-kill"
         ],
         "involved_cats": {
             "m_c": {
@@ -1233,7 +1256,7 @@
         "strings": [
             "Is racing through camp, accidentally knocking into Clanmates",
             "Defends Clanmate in an argument",
-            "Daydreams about beating a whole horde of rogues with one paw tied behind {PRONOUN/m_c/poss} back"
+            "Recently avoided a monster on the Thunderpath by the skin of {PRONOUN/m_c/poss} teeth!"
         ],
         "involved_cats": {
             "m_c": {
@@ -1253,7 +1276,7 @@
             "Promises to stick by a Clanmate's side",
             "Refuses to reconsider a belief a Clanmate disagreed with",
             "Is debating a conflicting belief with a Clanmate",
-            "Believes in {PRONOUN/m_c/poss} Clanmates"
+            "Leaves fresh-kill at the grave of a dead loved one"
         ],
         "involved_cats": {
             "m_c": {
@@ -1268,10 +1291,10 @@
     {
         "event_id": "fierce_clan_gen",
         "strings": [
+            "Pounces on r_c and says {PRONOUN/r_c/subject} should always be vigilant",
             "Tears up {PRONOUN/m_c/poss} fresh-kill far too violently for others' liking",
             "Wonders if a war will break out anytime soon",
-            "Is ready to defend c_n to the death",
-            "Daydreams about beating a whole horde of rogues with one paw tied behind {PRONOUN/m_c/poss} back"
+            "Is ready to defend c_n to the death"
         ],
         "involved_cats": {
             "m_c": {
@@ -1296,6 +1319,7 @@
             "Told a hilarious joke that spread around camp like wildfire",
             "Playfully flirts with cats from the other Clans at the Gathering",
             "Dazzles {PRONOUN/m_c/poss} Clanmates with {PRONOUN/m_c/poss} excellent skills",
+            "Bumped into another cat and had to start {PRONOUN/m_c/poss} grooming routine all over again",
             "Stretches in the center of camp",
             "Gives out grooming tips to {PRONOUN/m_c/poss} Clanmates"
         ],
@@ -1333,6 +1357,9 @@
     {
         "event_id": "grumpy_clan_gen",
         "strings": [
+            "Glares back at every cat {PRONOUN/m_c/subject} {VERB/m_c/catch/catches} looking at {PRONOUN/m_c/object}",
+            "Bluntly corrects something someone said wrong offpawedly",
+            "Is complaining to anyone who will listen",
             "Huffs as {PRONOUN/m_c/subject} {VERB/m_c/go/goes} to complete {PRONOUN/m_c/poss} assigned tasks",
             "Can't stand {PRONOUN/m_c/poss} Clanmates today",
             "Is trying {PRONOUN/m_c/poss} hardest to avoid being bothered by {PRONOUN/m_c/poss} Clanmates"
@@ -1352,8 +1379,10 @@
         "strings": [
             "Listens to r_c's lecture, unsure whether {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} right",
             "Had a nightmare about the entire Clan looking to {PRONOUN/m_c/object} for what to do",
+            "Hopes {PRONOUN/m_c/subject} will make it through leaf-bare",
             "Is sitting quietly on the far side of camp",
             "Worries that {PRONOUN/m_c/subject} {VERB/m_c/aren't/isn't} contributing enough",
+            "Wonders if r_c has ever struggled with feelings of inadequacy",
             "Tries to downplay {PRONOUN/m_c/poss} Clanmates' accomplishments"
         ],
         "involved_cats": {
@@ -1394,16 +1423,14 @@
         }
     },
     {
-        "event_id": "scared_not_leafbare_gen",
+        "event_id": "scared_storm_gen",
         "season": [
             "newleaf",
             "greenleaf",
             "leaf-fall"
         ],
         "strings": [
-            "Cowers in {PRONOUN/m_c/poss} nest during a particularly rough storm",
-            "Got startled by a leaf falling on {PRONOUN/m_c/object}",
-            "Freaked out after running face-first into a spiderweb"
+            "Cowers in {PRONOUN/m_c/poss} nest during a particularly rough storm"
         ],
         "involved_cats": {
             "m_c": {
@@ -1427,6 +1454,7 @@
             "Is sitting quietly on the far side of camp",
             "Is looking longingly at other cats as they talk amongst themselves",
             "Is nowhere to be seen around camp",
+            "Wonders if anyone would miss {PRONOUN/m_c/object} if {PRONOUN/m_c/subject} traveled far away",
             "Feels the need to escape camp, finding everyone's presence unbearable today",
             "Took a nap out in the territory away from others",
             "Went out to be by {PRONOUN/m_c/self}"
@@ -1471,8 +1499,8 @@
             "Quizzes {PRONOUN/m_c/poss} Clanmates on their favorite flowers... just 'cause",
             "Compares r_c to a legendary StarClan warrior",
             "Brings r_c {PRONOUN/r_c/poss} favorite prey",
-            "Feels giddy watching two Clanmates flirt",
-            "Believes in {PRONOUN/m_c/poss} Clanmates"
+            "Daydreams about a whirlwind romance",
+            "Feels giddy watching two Clanmates flirt"
         ],
         "involved_cats": {
             "m_c": {
@@ -1493,6 +1521,7 @@
         "event_id": "loving_to_living_apprentices",
         "strings": [
             "Spends some time with the apprentices",
+            "Comforts r_c after {PRONOUN/r_c/subject} had a bad day",
             "Tells r_c {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} proud of {PRONOUN/r_c/object}",
             "Reminds r_c there's no shame in asking for help",
             "Makes sure mentors are giving their apprentices regular breaks"
@@ -1607,11 +1636,7 @@
             "Knows {PRONOUN/m_c/poss} friendships are just as important as Clan bonds",
             "Puts c_n first",
             "Would give {PRONOUN/m_c/poss} life for c_n",
-            "Is proud to know {PRONOUN/m_c/poss} Clanmates can rely on {PRONOUN/m_c/object}",
-            "Hopes {PRONOUN/m_c/poss} Clanmates rely on {PRONOUN/m_c/object}",
-            "Hopes {PRONOUN/m_c/poss} Clanmates trust {PRONOUN/m_c/object}",
-            "Judges a Clanmate's disloyalty",
-            "Refuses to turn {PRONOUN/m_c/poss} back on a Clanmate"
+            "Is proud to know {PRONOUN/m_c/poss} Clanmates can rely on {PRONOUN/m_c/object}"
         ],
         "involved_cats": {
             "m_c": {
@@ -1660,14 +1685,11 @@
             "Debates fleeing a conversation with a Clanmate who is talking about something they clearly know nothing about",
             "Is nervously pacing around camp",
             "Is sitting quietly on the far side of camp",
+            "Thinks that {PRONOUN/m_c/subject} {VERB/m_c/are/is} hearing things",
             "Keeps checking {PRONOUN/m_c/poss} nest for burrs",
             "Is double checking that the camp walls are thoroughly reinforced",
             "Counts every cat in the Clan to make sure nobody's missing",
-            "Sneaks out of {PRONOUN/m_c/poss} nest at moonhigh to make sure the camp's okay",
-            "Is panicking over StarClan knows what",
-            "Has {PRONOUN/m_c/poss} head on a swivel",
-            "Is on high alert",
-            "Is extra jittery today"
+            "Sneaks out of {PRONOUN/m_c/poss} nest at moonhigh to make sure the camp's okay"
         ],
         "involved_cats": {
             "m_c": {
@@ -1704,39 +1726,10 @@
         }
     },
     {
-        "event_id": "oblivious_gen",
-        "strings": [
-            "Lazes in {PRONOUN/m_c/poss} nest all day with no sign of stopping",
-            "Makes {PRONOUN/m_c/poss} Clanmates roll their eyes",
-            "Is lying in the center of camp",
-            "Takes an extra piece of fresh-kill from the pile",
-            "Grooms intensely in clear view of everyone in camp",
-            "Announces that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} heading to the dirtplace",
-            "Is found napping in another cat's nest!",
-            "Stretches in the center of camp",
-            "Chases a butterfly around the camp",
-            "Sulks after r_c takes the piece of prey {PRONOUN/m_c/subject} secretly wanted",
-            "Chases a fly around camp and nearly crashes into r_c"
-        ],
-        "involved_cats": {
-            "m_c": {
-                "stat": {
-                    "trait": [
-                        "oblivious"
-                    ]
-                }
-            },
-            "r_c": {
-                "group": [
-                    "-afterlife"
-                ]
-            }
-        }
-    },
-    {
         "event_id": "playful_clan_gen",
         "strings": [
             "Is playing tag with cats around camp",
+            "Is tossing moss balls around",
             "Is hoping to be on friendly terms with neighboring Clans",
             "Is chasing a bug around the camp clearing",
             "Has been distracting {PRONOUN/m_c/poss} fellow Clanmates lately",
@@ -1747,7 +1740,7 @@
             "Runs around camp at moonhigh, getting out all {PRONOUN/m_c/poss} energy",
             "Tries to find the cutest piece of fresh-kill",
             "Sorts the fresh-kill pile from most to least aerodynamic",
-            "Has the whole Clan stumped with a riddle {PRONOUN/m_c/subject} came up with"
+            "Can't remember the punchline to {PRONOUN/m_c/poss} own joke"
         ],
         "involved_cats": {
             "m_c": {
@@ -1785,24 +1778,13 @@
         "event_id": "rebellious_clan_gen",
         "strings": [
             "Rebels against the instructions {PRONOUN/m_c/subject} {verb/m_c/were/was} given",
+            "Taunted a dog stuck behind a Twoleg fence",
             "Is spreading doubt through {PRONOUN/m_c/poss} Clanmates over the way things are done",
             "Imagines overthrowing a tyrannical leader one day",
             "Remembers breaking the code and getting away with it",
-            "Argues with r_c about the leader's authority",
-            "Wonders if {PRONOUN/m_c/poss} Clanmates would back {PRONOUN/m_c/object} up",
-            "Debates whether certain rules in the Code are necessary",
-            "Broke the Code to help a Clanmate",
-            "Is bending the rules of the Code",
-            "Knows the Code better then most",
-            "Thinks rules are made to be broken",
-            "Is thinking of breaking a rule",
-            "Broke a rule to help a cat in trouble",
-            "Is having to do extra chores after breaking the rules again",
-            "Is following the rules... for now...",
-            "Is in an argument over whether to follow a debatably stupid rule",
-            "Is suffering the consequences of breaking the rules",
             "Doesn't understand why other cats make rules that {PRONOUN/m_c/subject} {VERB/m_c/have/has} to follow",
-            "Is refusing to do something r_c told {PRONOUN/m_c/object} to"
+            "Argues with r_c about the leader's authority",
+            "Wonders if {PRONOUN/m_c/poss} Clanmates would back {PRONOUN/m_c/object} up"
         ],
         "involved_cats": {
             "m_c": {
@@ -1850,8 +1832,7 @@
             "Had a lengthy debate with r_c",
             "Rolled {PRONOUN/m_c/poss} eyes at a job r_c assigned {PRONOUN/m_c/object} to",
             "Is being scolded by r_c",
-            "Undermines r_c in front of Clanmates",
-            "Challenges r_c's authority"
+            "Undermines r_c in front of Clanmates"
         ],
         "involved_cats": {
             "m_c": {
@@ -1884,8 +1865,7 @@
             "Offers to help Clanmates with their duties",
             "Keeps the warrior code in mind",
             "Worries that the Clan may be over-hunting",
-            "Worries that the fresh-kill pile is looking lean",
-            "Believes in {PRONOUN/m_c/poss} Clanmates"
+            "Worries that the fresh-kill pile is looking lean"
         ],
         "involved_cats": {
             "m_c": {
@@ -2012,9 +1992,7 @@
             "Has been lazing in {PRONOUN/m_c/poss} nest all day with no sign of stopping",
             "Made {PRONOUN/m_c/poss} Clanmates roll their eyes",
             "Is lying in the center of camp",
-            "Is blatantly not doing {PRONOUN/m_c/poss} duties",
-            "Lied about an injury to get out of doing chores",
-            "Refuses to do any work cause {PRONOUN/m_c/subject} \"{VERB/m_c/do/does}n't wanna\""
+            "Is blatantly not doing {PRONOUN/m_c/poss} duties"
         ],
         "involved_cats": {
             "m_c": {
@@ -2054,9 +2032,7 @@
             "Makes the rounds around camp, checking in on every cat",
             "Wonders if {PRONOUN/m_c/poss} blunt correction of a Clanmate was too harsh",
             "Suggested a Clanmate speak with a mediator",
-            "Was brutally honest with a Clanmate and feels bad about it",
-            "Believes in {PRONOUN/m_c/poss} Clanmates",
-            "Is quick to reassure a Clanmate even if they don't need it"
+            "Was brutally honest with a Clanmate and feels bad about it"
         ],
         "involved_cats": {
             "m_c": {
@@ -2071,6 +2047,8 @@
     {
         "event_id": "strange_clan_gen",
         "strings": [
+            "Is telling everyone about {PRONOUN/m_c/poss} weird dreams",
+            "Stands uncomfortably close to other cats without a word",
             "Volunteers to guard the dirtplace...?",
             "Doesn't feel understood by {PRONOUN/m_c/poss} Clanmates",
             "Wanders off alone",
@@ -2082,7 +2060,7 @@
             "Chases {PRONOUN/m_c/poss} own tail around camp",
             "Talks to the bugs that crawl around camp",
             "Wonders if StarClan ever gets bored",
-            "Climbs on top of the warriors' den"
+            "Makes a poultice of mud and grass"
         ],
         "involved_cats": {
             "m_c": {
@@ -2098,11 +2076,15 @@
         "event_id": "strict_clan_gen",
         "strings": [
             "Is surveying the camp scornfully from a higher vantage point",
+            "Is grooming {PRONOUN/m_c/self}, making sure every whisker is in place",
             "Is busy chastising Clanmates... but no cat is sure what for",
             "Feels that a new rule should be added to the Warrior Code",
             "Goes around camp, policing everyone's posture",
             "Makes sure everyone only takes one piece of fresh-kill and no more",
             "Quizzes {PRONOUN/m_c/poss} Clanmates on the warrior code",
+            "Frowns at r_c for spending the whole morning grooming",
+            "Thinks every cat should practice their hunting crouch more",
+            "Has no time for hare-brained new hunting techniques",
             "Knows rules are the only thing separating them from rogues and loners",
             "Reminds a Clanmate to give thanks after every catch",
             "Can't believe r_c thinks moving the border a mouse-length wouldn't matter"
@@ -2188,9 +2170,7 @@
             "Offered to share {PRONOUN/m_c/poss} prey with a Clanmate sitting all by themselves",
             "Plucks feathers off {PRONOUN/m_c/poss} fresh-kill to line {PRONOUN/m_c/poss} Clanmates' nests",
             "Feels exhausted from looking out for everyone",
-            "Refuses to turn {PRONOUN/m_c/poss} back on a Clanmate",
-            "Hopes {PRONOUN/m_c/poss} Clanmates rely on {PRONOUN/m_c/object}",
-            "Hopes {PRONOUN/m_c/poss} Clanmates trust {PRONOUN/m_c/object}"
+            "Brings r_c {PRONOUN/r_c/poss} favorite flower"
         ],
         "involved_cats": {
             "m_c": {
@@ -2274,6 +2254,7 @@
         "event_id": "troublesome_clan_gen",
         "strings": [
             "Recently put a dead snake at the camp entrance to scare Clanmates",
+            "Is embarrassed after getting a taste of {PRONOUN/m_c/poss} own bitter herbs... Serves {PRONOUN/m_c/object} right!",
             "Is surprisingly on task today",
             "Is lightening the mood with {PRONOUN/m_c/poss} shenanigans",
             "Ate {PRONOUN/m_c/poss} fill and then some from the fresh-kill pile",
@@ -2360,7 +2341,9 @@
         "strings": [
             "Is glaring daggers across the camp clearing",
             "Daydreams all day about an elaborate plot to make a Clanmate disappear",
-            "Hopes that everyone who hurt {PRONOUN/m_c/object} is suffering in the Place of No Stars"
+            "Has to bite {PRONOUN/m_c/poss} tongue, even though {PRONOUN/m_c/subject} really {VERB/m_c/want/wants} the last word",
+            "Hopes that everyone who hurt {PRONOUN/m_c/object} is suffering in the Place of No Stars",
+            "Hisses at a certain cat when they walk by"
         ],
         "involved_cats": {
             "m_c": {
@@ -2378,9 +2361,7 @@
             "Is explaining the truth to a Clanmate that said something incorrect",
             "Sits quietly, observing the Clan dynamics with a knowing gaze",
             "Purrs softly at a Clanmate taking a rash course of action",
-            "Sighs, watching {PRONOUN/m_c/poss} Clanmates argue over a misunderstanding",
-            "Calmly removes a harmless snake from camp",
-            "Has the whole Clan stumped with a riddle {PRONOUN/m_c/subject} came up with"
+            "Sighs, watching {PRONOUN/m_c/poss} Clanmates argue over a misunderstanding"
         ],
         "involved_cats": {
             "m_c": {
@@ -3534,14 +3515,12 @@
         "involved_cats": {
             "m_c": {
                 "status": [
-                    "-kitten",
-                    "-newborn"
+                    "-kitten"
                 ]
             },
             "r_c": {
                 "status": [
-                    "-kitten",
-                    "-newborn"
+                    "-kitten"
                 ],
                 "group": [
                     "-afterlife"
@@ -3558,7 +3537,7 @@
                 ],
                 "mutual": false,
                 "constraints": [
-                    "littermates"
+                    "siblings"
                 ]
             }
         ]
@@ -3590,73 +3569,6 @@
                 "mutual": false,
                 "constraints": [
                     "parent/child"
-                ]
-            }
-        ]
-    },
-    {
-        "event_id": "cat_leadership_parent",
-        "strings": [
-            "Is proud of {PRONOUN/m_c/poss} parent, r_c",
-            "Wonders if the Clan treats {PRONOUN/m_c/object} any differently because of {PRONOUN/m_c/poss} parent, r_c",
-            "Wonders if {PRONOUN/m_c/subject} should aim for r_c's position"
-        ],
-        "involved_cats": {
-            "r_c": {
-                "status": [
-                    "leader",
-                    "deputy"
-                ],
-                "group": [
-                    "-afterlife"
-                ]
-            }
-        },
-        "relationship_constraint": [
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
-                "mutual": false,
-                "constraints": [
-                    "child/parent"
-                ]
-            }
-        ]
-    },
-    {
-        "event_id": "cat_med_parent",
-        "strings": [
-            "Is visiting the medicine cat den to see {PRONOUN/m_c/poss} parent, r_c",
-            "Is watching r_c work",
-            "Is able to identify herbs better then {PRONOUN/m_c/poss} Clanmates due to {PRONOUN/m_c/poss} upbringing",
-            "Is bringing fresh-kill to {PRONOUN/m_c/poss} parent, r_c",
-            "Is helping r_c out in the medicine cat den"
-        ],
-        "involved_cats": {
-            "r_c": {
-                "status": [
-                    "medicine cat"
-                ],
-                "group": [
-                    "-afterlife"
-                ]
-            }
-        },
-        "relationship_constraint": [
-            {
-                "cats_from": [
-                    "m_c"
-                ],
-                "cats_to": [
-                    "r_c"
-                ],
-                "mutual": false,
-                "constraints": [
-                    "child/parent"
                 ]
             }
         ]
@@ -6771,8 +6683,7 @@
             "Listens intently as r_c tries to explain things to {PRONOUN/m_c/object}",
             "Correctly recognizes r_c from the thumps of {PRONOUN/r_c/poss} pawsteps alone",
             "Bristles at the pity from {PRONOUN/m_c/poss} Clanmates",
-            "Tells r_c no, {PRONOUN/m_c/subject} can't see in {PRONOUN/m_c/poss} dreams",
-            "Is tired of explaining {PRONOUN/m_c/subject} just {VERB/m_c/see/sees} nothing, not darkness"
+            "Tells r_c no, {PRONOUN/m_c/subject} can't see in {PRONOUN/m_c/poss} dreams"
         ],
         "involved_cats": {
             "m_c": {
@@ -6860,7 +6771,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "one_bad_eye"
+                        "one bad eye"
                     ]
                 }
             },
@@ -6883,7 +6794,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "one_bad_eye"
+                        "one bad eye"
                     ]
                 }
             },
@@ -6913,7 +6824,7 @@
                 ],
                 "health": {
                     "condition": [
-                        "one_bad_eye"
+                        "one bad eye"
                     ]
                 }
             },
@@ -6939,7 +6850,7 @@
                 ],
                 "health": {
                     "condition": [
-                        "one_bad_eye"
+                        "one bad eye"
                     ]
                 }
             },
@@ -6962,7 +6873,7 @@
                 ],
                 "health": {
                     "condition": [
-                        "one_bad_eye"
+                        "one bad eye"
                     ]
                 }
             },
@@ -6990,7 +6901,7 @@
                 ],
                 "health": {
                     "condition": [
-                        "one_bad_eye"
+                        "one bad eye"
                     ]
                 }
             },
@@ -7011,7 +6922,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "partial_hearing_loss"
+                        "partial hearing loss"
                     ]
                 }
             }
@@ -7028,7 +6939,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "partial_hearing_loss"
+                        "partial hearing loss"
                     ]
                 }
             },
@@ -7050,7 +6961,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "partial_hearing_loss"
+                        "partial hearing loss"
                     ],
                     "must_be_congenital": true
                 }
@@ -7074,7 +6985,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "partial_hearing_loss"
+                        "partial hearing loss"
                     ]
                 }
             }
@@ -7092,7 +7003,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "partial_hearing_loss"
+                        "partial hearing loss"
                     ]
                 }
             },
@@ -7120,7 +7031,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "partial_hearing_loss"
+                        "partial hearing loss"
                     ]
                 }
             },
@@ -7143,7 +7054,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "partial_hearing_loss"
+                        "partial hearing loss"
                     ]
                 }
             },
@@ -7168,7 +7079,7 @@
                 ],
                 "health": {
                     "condition": [
-                        "partial_hearing_loss",
+                        "partial hearing loss",
                         "deaf"
                     ],
                     "must_be_congenital": true
@@ -7467,7 +7378,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "wasting_disease"
+                        "wasting disease"
                     ]
                 }
             },
@@ -7492,7 +7403,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "wasting_disease"
+                        "wasting disease"
                     ]
                 }
             }
@@ -7513,7 +7424,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "wasting_disease"
+                        "wasting disease"
                     ]
                 }
             }
@@ -7537,7 +7448,7 @@
                 ],
                 "health": {
                     "condition": [
-                        "wasting_disease"
+                        "wasting disease"
                     ]
                 }
             }
@@ -7554,8 +7465,8 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "lost_leg",
-                        "born_without_leg"
+                        "lost a leg",
+                        "born without a leg"
                     ]
                 }
             },
@@ -7582,7 +7493,7 @@
                 ],
                 "health": {
                     "condition": [
-                        "lost_leg"
+                        "lost a leg"
                     ]
                 }
             },
@@ -7606,8 +7517,8 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "lost_tail",
-                        "born_without_tail"
+                        "lost their tail",
+                        "born without a tail"
                     ]
                 }
             },
@@ -7629,7 +7540,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "lost_tail"
+                        "lost their tail"
                     ]
                 }
             },
@@ -7652,8 +7563,8 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "lost_tail",
-                        "born_without_tail"
+                        "lost their tail",
+                        "born without a tail"
                     ]
                 }
             },
@@ -7682,7 +7593,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "constantly_dizzy"
+                        "constantly dizzy"
                     ]
                 }
             },
@@ -7804,7 +7715,7 @@
             "r_c": {
                 "health": {
                     "condition": [
-                        "running_nose"
+                        "running nose"
                     ]
                 }
             }
@@ -8051,7 +7962,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "lasting_grief"
+                        "lasting grief"
                     ]
                 }
             }
@@ -8067,7 +7978,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "lasting_grief"
+                        "lasting grief"
                     ]
                 }
             },
@@ -8095,7 +8006,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "recurring_shock"
+                        "recurring shock"
                     ]
                 }
             },
@@ -8138,7 +8049,7 @@
                 "health": {
                     "condition": [
                         "shock",
-                        "lingering_shock"
+                        "lingering shock"
                     ]
                 }
             }
@@ -8160,7 +8071,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "blood_loss"
+                        "blood loss"
                     ]
                 }
             }
@@ -8180,8 +8091,8 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "broken_bone",
-                        "broken_jaw"
+                        "broken bone",
+                        "broken jaw"
                     ]
                 }
             }
@@ -8199,8 +8110,8 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "mangled_tail",
-                        "mangled_leg"
+                        "mangled tail",
+                        "mangled leg"
                     ]
                 }
             }
@@ -8217,7 +8128,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "phantom_pain"
+                        "phantom pain"
                     ]
                 }
             }
@@ -8236,7 +8147,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "dangerously_cold",
+                        "shivering",
                         "frostbite"
                     ]
                 }
@@ -8256,7 +8167,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "recovering_from_birth"
+                        "recovering from birth"
                     ]
                 }
             }
@@ -8275,7 +8186,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "water_in_lungs"
+                        "water in their lungs"
                     ]
                 }
             }
@@ -8294,7 +8205,7 @@
                 "health": {
                     "condition": [
                         "burn",
-                        "severe_burn"
+                        "severe burn"
                     ]
                 }
             }
@@ -8344,7 +8255,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "head_damage"
+                        "head damage"
                     ]
                 }
             }
@@ -8363,7 +8274,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "damaged_eyes"
+                        "damaged eyes"
                     ]
                 }
             }
@@ -8383,7 +8294,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "broken_back"
+                        "broken back"
                     ]
                 }
             }
@@ -8427,7 +8338,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "bee_sting"
+                        "bee sting"
                     ]
                 }
             }
@@ -8450,7 +8361,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "severe_headache"
+                        "severe headache"
                     ]
                 }
             }
@@ -8623,7 +8534,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "infection"
+                        "an infected wound"
                     ]
                 }
             }
@@ -8643,7 +8554,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "carrionplace_disease"
+                        "carrionplace disease"
                     ]
                 }
             }
@@ -8665,7 +8576,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "festering_wound"
+                        "a festering wound"
                     ]
                 }
             }
@@ -8683,7 +8594,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "heat_stroke"
+                        "heat stroke"
                     ]
                 }
             }
@@ -8701,7 +8612,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "heat_exhaustion"
+                        "heat exhaustion"
                     ]
                 }
             }
@@ -8748,7 +8659,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "constant_nightmares"
+                        "constant nightmares"
                     ]
                 }
             }
@@ -8771,7 +8682,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "grief_stricken"
+                        "grief stricken"
                     ]
                 }
             }
@@ -8829,7 +8740,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "running_nose"
+                        "running nose"
                     ]
                 }
             }
@@ -8940,12 +8851,12 @@
                 "health": {
                     "condition": [
                         "bruises",
-                        "cracked_pads",
+                        "cracked pads",
                         "sore",
                         "scrapes",
-                        "small_cut",
-                        "tick_bites",
-                        "torn_ear"
+                        "small cut",
+                        "tick bites",
+                        "torn ear"
                     ]
                 }
             }
@@ -8964,16 +8875,16 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "claw_wound",
-                        "bite_wound",
-                        "cat_bite",
-                        "beak_bite",
-                        "snake_bite",
-                        "rat_bite",
-                        "dislocated_joint",
+                        "claw-wound",
+                        "bite-wound",
+                        "cat bite",
+                        "beak bite",
+                        "snake bite",
+                        "rat bite",
+                        "dislocated joint",
                         "sprain",
-                        "porcupine_quilled",
-                        "torn_pelt"
+                        "quilled by a porcupine",
+                        "torn pelt"
                     ]
                 }
             }
@@ -9001,14 +8912,14 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "broken_jaw",
-                        "broken_back",
-                        "broken_bone",
-                        "mangled_leg",
-                        "mangled_tail",
-                        "head_damage",
-                        "severe_burn",
-                        "severe_headache"
+                        "broken jaw",
+                        "broken back",
+                        "broken bone",
+                        "mangled leg",
+                        "mangled tail",
+                        "head damage",
+                        "severe burn",
+                        "severe headache"
                     ]
                 }
             },
@@ -9033,7 +8944,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "seizure_prone"
+                        "seizure prone"
                     ]
                 }
             },
@@ -9055,7 +8966,7 @@
             "m_c": {
                 "health": {
                     "condition": [
-                        "seizure_prone"
+                        "seizure prone"
                     ]
                 }
             },

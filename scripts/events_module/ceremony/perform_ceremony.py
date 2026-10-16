@@ -5,10 +5,13 @@ from math import floor
 import i18n
 
 from scripts.cat.cats import cat_class, Cat
-from scripts.cat.conditions.coverage_check import medicine_cats_can_cover_clan
 from scripts.cat.enums import CatRank, CatAge
 from scripts.cat.skills import SkillPath
 from scripts.clan_package.settings import get_clan_setting
+from scripts.conditions import (
+    medicine_cats_can_cover_clan,
+    get_amount_cat_for_one_medic,
+)
 from scripts.config import get_config
 from scripts.events_module.ceremony.generate_normal_ceremony import create_ceremony
 from scripts.events_module.event_information import EventInformation
@@ -39,6 +42,9 @@ def trigger_ceremony(
     # applies actual rank change
     current_mentor = Cat.fetch_cat(main_cat.mentor) if main_cat.mentor else None
     main_cat.rank_change(new_rank)
+
+    main_cat.new_rank_health(new_rank)
+
     main_cat.rank_change_traits_skill(current_mentor)
 
     # now we create the ceremony event for the player to view
@@ -120,7 +126,10 @@ def check_for_ceremony(main_cat: Cat):
 
         if _ready:
             if main_cat.status.rank == CatRank.APPRENTICE:
-                trigger_ceremony(main_cat, CatRank.WARRIOR)
+                if _is_suitable_templar(main_cat):
+                    trigger_ceremony(main_cat, CatRank.TEMPLAR)
+                else:
+                    trigger_ceremony(main_cat, CatRank.WARRIOR)
 
             # promote to med cat
             elif main_cat.status.rank == CatRank.MEDICINE_APPRENTICE:
@@ -128,11 +137,6 @@ def check_for_ceremony(main_cat: Cat):
 
             elif main_cat.status.rank == CatRank.MEDIATOR_APPRENTICE:
                 trigger_ceremony(main_cat, CatRank.MEDIATOR)
-
-
-def get_leaders_kits():
-    leaders_kits = game.clan.leader.get_children()
-    return leaders_kits
 
 
 def check_and_promote_deputy():
@@ -162,9 +166,6 @@ def check_and_promote_deputy():
         )
     )
 
-    if get_config("ranks.only_leader_kits_deputy") and game.clan.leader is not None:
-        possible_deputies = [c for c in possible_deputies if c.ID in get_leaders_kits()]
-
     if possible_deputies:
         # from here we must have appropriate deputy choices
         main_cat = random.choice(possible_deputies)
@@ -177,12 +178,9 @@ def check_and_promote_deputy():
                 Cat.all_cats_list,
             )
         )
-
-        if get_config("ranks.only_leader_kits_deputy") and game.clan.leader is not None:
-            # If none of the leader's kits meet all the requirements for deputy, choose one randomly, with special text.
-            all_warriors = [c for c in all_warriors if c.ID in get_leaders_kits()]
         if all_warriors:
             main_cat = random.choice(all_warriors)
+
         else:
             # If there are no warriors at all, no one is named deputy.
             game.cur_events_list.append(
@@ -215,7 +213,7 @@ def _handle_leader_ceremony(main_cat):
     """
     Handles everything pertaining to a leader ceremony.
     """
-    game.clan.reset_leader_lives()
+    game.clan.leader_lives = 5
     trigger_ceremony(main_cat, CatRank.LEADER)
     main_cat.generate_lead_ceremony()
     game.clan.deputy = None
@@ -251,7 +249,7 @@ def _is_suitable_mediator_app(main_cat: Cat) -> bool:
         "thoughtful",
     ]:
         chance = int(chance / 1.5)
-    if main_cat.permanent_conditions:
+    if main_cat.is_disabled():
         chance = int(chance / 2)
     if chance == 0:
         chance = 1
@@ -291,7 +289,10 @@ def _is_suitable_medcat_app(cat) -> bool:
     logger.debug("Current number of medcat apps: %d", num_med_apps)
 
     # check if the Clan has sufficient med cats
-    enough_working_meds = medicine_cats_can_cover_clan(Cat.all_cats.values())
+    enough_working_meds = medicine_cats_can_cover_clan(
+        Cat.all_cats.values(),
+        amount_per_med=get_amount_cat_for_one_medic(game.clan),
+    )
 
     if (
         floor(num_med_apps / max(1, (len(med_cat_list) - num_med_apps)))
@@ -370,38 +371,38 @@ def _is_suitable_medcat_app(cat) -> bool:
             )
 
     if cat.personality.trait in [
-        "careful",
+        "lonesome",
+        "bold",
         "compassionate",
-        "loving",
-        "wise",
-        "faithful",
+        "thoughtful",
+        "confident",
+        "calm",
+        "careful",
+        "responsible",
     ]:
         chance = chance / 1.3
         logger.info("Suitable trait, chance updated to %d", round(chance))
 
     elif cat.personality.trait in [
-        "adventurous",
+        "daydreamer",
+        "bossy",
+        "self-conscious",
+        "know-it-all",
         "arrogant",
-        "bold",
-        "bloodthirsty",
-        "cold",
-        "fierce",
-        "rebellious",
-        "troublesome",
-        "vengeful",
+        "bullying",
     ]:
         chance = chance * 2
         logger.info("Unsuitable trait, chance updated to %d", round(chance))
 
     beneficial_skills = [
-        SkillPath.OMEN,
-        SkillPath.PROPHET,
+        SkillPath.CLEVER,
+        SkillPath.SENSE,
         SkillPath.HEALER,
-        SkillPath.STAR,
-        SkillPath.DREAM,
-        SkillPath.CLAIRVOYANT,
-        SkillPath.GHOST,
         SkillPath.CAMP,
+        SkillPath.RUNNER,
+        SkillPath.CLIMBER,
+        SkillPath.SPEAKER,
+        SkillPath.MEDIATOR,
     ]
 
     if cat.skills.primary.path in beneficial_skills:
@@ -412,7 +413,7 @@ def _is_suitable_medcat_app(cat) -> bool:
         chance = chance / 4
         logger.info("beneficial secondary skill, chance updated to %d", round(chance))
 
-    if cat.permanent_conditions:
+    if cat.is_disabled():
         chance = chance / 2
 
     if num_med_apps == 0:
@@ -426,6 +427,61 @@ def _is_suitable_medcat_app(cat) -> bool:
         logger.info("%d medcat apps, chance updated to %d", num_med_apps, chance)
 
     chance = max(1, int(chance))
+
+    success = not int(random.random() * chance)
+    logger.info("%s final chance: %d | SUCCESS: %s", cat.name, chance, success)
+    return success
+
+def _is_suitable_templar(cat) -> bool:
+    chance = constants.CONFIG["roles"]["base_templar_chance"]
+    logger.info("Templar %s starting chance: %d", str(cat.name), chance)
+
+    templar_skills = [
+        SkillPath.SENSE,
+        SkillPath.STAR,
+        SkillPath.OMEN,
+        SkillPath.DREAM,
+        SkillPath.CLAIRVOYANT,
+        SkillPath.PROPHET,
+        SkillPath.GHOST,
+        SkillPath.DARK,
+    ]
+
+    if cat.skills.primary.path in templar_skills:
+        chance = 20
+
+    if cat.skills.secondary and cat.skills.secondary.path in templar_skills:
+        chance = chance / 2
+        logger.info("beneficial secondary skill, chance updated to %d", round(chance))
+    
+    if cat.personality.trait in [
+        "fierce",
+        "bold",
+        "daring",
+        "righteous",
+        "confident",
+        "calm",
+        "careful",
+        "loyal",
+        "responsible",
+        "strange",
+        "fearless",
+    ]:
+        chance = chance / 2
+
+    elif cat.personality.trait in [
+        "nervous",
+        "insecure",
+        "arrogant",
+        "oblivious",
+        "unruly",
+        "bullying",
+        "noisy",
+    ]:
+        chance = chance * 3
+
+    if cat.is_disabled():
+        chance = chance * 1.5
 
     success = not int(random.random() * chance)
     logger.info("%s final chance: %d | SUCCESS: %s", cat.name, chance, success)

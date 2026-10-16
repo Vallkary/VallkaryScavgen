@@ -1,19 +1,19 @@
 {
     "en": {
-        "heading": "Timeskip to progress your Clan's life.",
-        "season": "Current season: %{season}",
+        "heading": "Timeskip to progress your Tribe's life.",
+        "season": "Current Quarter: %{season}",
         "age": {
-            "one": "Clan age: %{count} moon",
-            "many": "Clan age: %{count} moons"
+            "one": "Tribe age: %{count} twelfth turn",
+            "many": "Tribe age: %{count} twelfth turns"
         },
-        "timeskip_button": "Timeskip One Moon",
+        "timeskip_button": "Timeskip One Turn",
         "all events": "all events",
         "ceremonies": "ceremonies",
         "births & deaths": "births & deaths",
         "relationships": "relationships",
         "health": "health",
-        "other clans": "other clans",
+        "other clans": "other tribes",
         "miscellaneous": "miscellaneous",
-        "no_events": "Nothing interesting happened this moon."
+        "no_events": "Nothing interesting happened this twelfth turn."
     }
 }

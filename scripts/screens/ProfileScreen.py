@@ -9,52 +9,48 @@ import i18n
 import pygame
 import pygame_gui
 import ujson
+from pygame_gui.core import ObjectID
 
-from scripts.cat.cats import Cat, BACKSTORIES
-from scripts.cat.conditions.permanent_condition import PermanentCondition
-from scripts.cat.enums import CatGroup, CatThought, CatRank, CatAge
-from scripts.cat.pelts import Pelt
-from scripts.cat.pronouns import get_new_pronouns
-from scripts.cat.sprites.load_sprites import sprites
-from scripts.clan_package.settings import get_clan_setting
-from scripts.clan_resources.freshkill import FRESHKILL_ACTIVE
 from scripts.config import get_config
-from scripts.events import update_afterlife_temper
-from scripts.events_module.text_adjust import (
-    event_text_adjust,
-    shorten_text_to_fit,
-    adjust_list_text,
-    process_text,
-)
-from scripts.events_module.thoughts.generate_thoughts import get_new_thought
 from scripts.game_input import INPUT_ACTION_PRESSED, Action
+from scripts.cat.cats import Cat, BACKSTORIES
+from scripts.clan_resources.freshkill import FRESHKILL_ACTIVE
 from scripts.game_structure import image_cache, game
-from scripts.game_structure.game import (
-    Switch,
-    switch_get_value,
-    safe_save,
-    game_setting_get,
-)
-from scripts.game_structure.game.switches import switch_set_value
-from scripts.game_structure.screen_settings import MANAGER
-from scripts.housekeeping.datadir import get_save_dir
-from scripts.screens.Screens import Screens
-from scripts.screens.enums import GameScreen
-from scripts.ui.elements.checkbox import UICheckbox
-from scripts.ui.elements.image_button import UIImageButton
-from scripts.ui.elements.modified_image import UIModifiedImage
-from scripts.ui.elements.surface_image_button import UISurfaceImageButton
-from scripts.ui.elements.text_box_tweaked import UITextBoxTweaked
-from scripts.ui.generate_box import BoxStyles, get_box
-from scripts.ui.generate_button import get_button_dict, ButtonStyles
-from scripts.ui.icon import Icon
-from scripts.ui.scale import ui_scale, ui_scale_offset, ui_scale_dimensions
-from scripts.ui.theme import get_text_box_theme
-from scripts.ui.windows.change_cat_name import ChangeCatNameWindow
-from scripts.ui.windows.change_cat_toggles import CatToggleWindow
 from scripts.ui.windows.cruel_locked_action import CruelLockedAction
-from scripts.ui.windows.kill_cat import KillCat
-from scripts.ui.windows.leave_clan import LeaveClanWindow
+from ..events_module.thoughts.generate_thoughts import get_new_thought
+from ..ui.elements.modified_image import UIModifiedImage
+from ..ui.elements.text_box_tweaked import UITextBoxTweaked
+from ..ui.elements.image_button import UIImageButton
+from ..ui.elements.checkbox import UICheckbox
+from ..ui.elements.surface_image_button import UISurfaceImageButton
+from ..ui.theme import get_text_box_theme
+from ..events_module.text_adjust import (
+    process_text,
+    event_text_adjust,
+    adjust_list_text,
+    shorten_text_to_fit,
+)
+from ..ui.scale import ui_scale, ui_scale_dimensions, ui_scale_offset
+from scripts.cat.pelts import Pelt
+from .Screens import Screens
+from .enums import GameScreen
+from ..cat.enums import CatAge, CatRank, CatGroup, CatThought
+from ..cat.sprites.load_sprites import sprites
+from ..clan_package.settings import get_clan_setting
+from ..events import update_afterlife_temper
+from ..game_structure.game.save_load import safe_save
+from ..game_structure.game.settings import game_setting_get
+from ..game_structure.game.switches import switch_set_value, switch_get_value, Switch
+from ..cat.pronouns import get_new_pronouns
+from ..game_structure.screen_settings import MANAGER
+from ..ui.windows.change_cat_name import ChangeCatNameWindow
+from ..ui.windows.kill_cat import KillCat
+from ..ui.windows.change_cat_toggles import CatToggleWindow
+from ..housekeeping.datadir import get_save_dir
+from ..ui.generate_box import get_box, BoxStyles
+from ..ui.generate_button import ButtonStyles, get_button_dict
+from ..ui.icon import Icon
+from ..ui.windows.leave_clan import LeaveClanWindow
 
 
 # ---------------------------------------------------------------------------- #
@@ -646,7 +642,7 @@ class ProfileScreen(Screens):
                         ),
                         season=game.clan.current_season,
                         show_nest=self.the_cat.age == "newborn"
-                        or not self.the_cat.can_work(),
+                        or self.the_cat.not_working(),
                         group=self.the_cat.status.group,
                     ),
                     ui_scale_dimensions((240, 210)),
@@ -776,7 +772,6 @@ class ProfileScreen(Screens):
         if the_cat.dead:
             output += "\n"
             output += i18n.t("general.moons_age_in_death", count=the_cat.dead_for)
-
         # NEWLINE ----------
         output += "\n"
 
@@ -812,7 +807,7 @@ class ProfileScreen(Screens):
             if sprites.COLLAR_DATA["palette_map"]:
                 for acc in the_cat.pelt.accessory:
                     potential_collar = "".join(
-                        [x for x in acc if not x.islower() and not x.isdigit()]
+                        [x for x in acc if not x.islower()]
                     ).strip("_")
                     for style in Pelt.collar_styles:
                         if style == potential_collar:
@@ -969,11 +964,19 @@ class ProfileScreen(Screens):
 
         # LEADER LIVES:
         # Optional - Only shows up for leaders
-        if not the_cat.dead and CatRank.LEADER in the_cat.status.rank:
-            output += " "
+
+
+         # NEWLINE ----------
+        output += "\n"
+
+        # HEALTH
+        if not the_cat.dead:
+            output += ""
             output += i18n.t(
-                "screens.profile.lives_remaining_label", count=game.clan.leader_lives
+                "screens.profile.health_label", healthstat=the_cat.healthstat
             )
+        else:
+            output += "no remaining health"
 
         # NEWLINE ----------
         output += "\n"
@@ -1083,9 +1086,12 @@ class ProfileScreen(Screens):
                     output += " (" + str(int(nutr.percentage)) + ")"
                 output += "\n"
 
-        if the_cat.permanent_conditions:
-            for condition in the_cat.permanent_conditions:
-                if condition.is_congenital and condition.moons_until_discovery >= 0:
+        if the_cat.is_disabled():
+            for condition in the_cat.permanent_condition:
+                if (
+                    the_cat.permanent_condition[condition]["born_with"] is True
+                    and the_cat.permanent_condition[condition]["moons_until"] != -2
+                ):
                     continue
                 output += i18n.t("general.has_permanent_condition")
 
@@ -1093,16 +1099,25 @@ class ProfileScreen(Screens):
                 output += "\n"
                 break
 
-        if the_cat.temporary_conditions:
-            alerts = []
-            for condition in the_cat.temporary_conditions:
-                new_alert = i18n.t(
-                    f"conditions.temporary_conditions.{condition.name}_alert"
+        if the_cat.is_injured():
+            if "recovering from birth" in the_cat.injuries:
+                output += i18n.t(
+                    "utility.exclamation",
+                    text=i18n.t("conditions.injuries.recovering from birth"),
                 )
-                if new_alert not in alerts:
-                    alerts.append(new_alert)
-            if alerts:
-                output += "\n".join(alerts)
+            elif "pregnant" in the_cat.injuries:
+                output += i18n.t(
+                    "utility.exclamation", text=i18n.t("conditions.injuries.pregnant")
+                )
+            else:
+                output += i18n.t("utility.exclamation", text=i18n.t("general.injured"))
+        elif the_cat.is_ill():
+            if "grief stricken" in the_cat.illnesses:
+                output += i18n.t("utility.exclamation", text=i18n.t("general.grieving"))
+            elif "fleas" in the_cat.illnesses:
+                output += i18n.t("utility.exclamation", text=i18n.t("general.fleas"))
+            else:
+                output += i18n.t("utility.exclamation", text=i18n.t("general.sick"))
 
         return output
 
@@ -1783,26 +1798,40 @@ class ProfileScreen(Screens):
         )
 
         # gather a list of all the conditions and info needed.
-        all_conditions = [
-            {"name": i.name, "details": self.get_condition_details(i)}
-            for i in self.the_cat.permanent_conditions
-            + self.the_cat.temporary_conditions
-            if not (hasattr(i, "is_complication") and i.is_complication)
-            and not (
-                isinstance(i, PermanentCondition)
-                and i.is_congenital
-                and i.moons_until_discovery >= 0
+        all_illness_injuries = [
+            [i, self.get_condition_details(i)]
+            for i in self.the_cat.permanent_condition
+            if not (
+                self.the_cat.permanent_condition[i]["born_with"]
+                and self.the_cat.permanent_condition[i]["moons_until"] != -2
             )
         ]
-        for con in all_conditions:
-            if con["name"] in self.the_cat.permanent_conditions:
-                con["name"] = i18n.t(f"conditions.permanent_conditions.{con['name']}")
-            else:
-                con["name"] = i18n.t(f"conditions.temporary_conditions.{con['name']}")
+        all_illness_injuries.extend(
+            [[i, self.get_condition_details(i)] for i in self.the_cat.injuries]
+        )
+        all_illness_injuries.extend(
+            [
+                [i, self.get_condition_details(i)]
+                for i in self.the_cat.illnesses
+                if i not in ("an infected wound", "a festering wound")
+            ]
+        )
+        # forgive me. Since I don't know how else to do this,
+        # we just kind of brute-force it
+        for cond in all_illness_injuries:
+            for i in [
+                "conditions.injuries.",
+                "conditions.illnesses.",
+                "conditions.permanent_conditions.",
+            ]:
+                temp = i18n.t(i + cond[0])
+                if temp != i + cond[0]:
+                    cond[0] = temp
+                    break
 
-        all_condition_info = self.get_list_chunks(all_conditions, 4)
+        all_illness_injuries = self.get_list_chunks(all_illness_injuries, 4)
 
-        if not all_condition_info:
+        if not all_illness_injuries:
             self.conditions_page = 0
             self.right_conditions_arrow.disable()
             self.left_conditions_arrow.disable()
@@ -1811,8 +1840,8 @@ class ProfileScreen(Screens):
         # Adjust the page number if it somehow goes out of range.
         if self.conditions_page < 0:
             self.conditions_page = 0
-        elif self.conditions_page > len(all_condition_info) - 1:
-            self.conditions_page = len(all_condition_info) - 1
+        elif self.conditions_page > len(all_illness_injuries) - 1:
+            self.conditions_page = len(all_illness_injuries) - 1
 
         # Disable the arrow buttons
         if self.conditions_page == 0:
@@ -1820,7 +1849,7 @@ class ProfileScreen(Screens):
         else:
             self.left_conditions_arrow.enable()
 
-        if self.conditions_page >= len(all_condition_info) - 1:
+        if self.conditions_page >= len(all_illness_injuries) - 1:
             self.right_conditions_arrow.disable()
         else:
             self.right_conditions_arrow.enable()
@@ -1829,8 +1858,7 @@ class ProfileScreen(Screens):
         for x in self.condition_data.values():
             x.kill()
         self.condition_data = {}
-
-        for con in all_condition_info[self.conditions_page]:
+        for con in all_illness_injuries[self.conditions_page]:
             # Background Box
             self.condition_data[f"bg_{con}"] = pygame_gui.elements.UIPanel(
                 ui_scale(pygame.Rect((x_pos, 13), (142, 142))),
@@ -1841,7 +1869,7 @@ class ProfileScreen(Screens):
             )
 
             self.condition_data[f"name_{con}"] = UITextBoxTweaked(
-                con["name"],
+                con[0],
                 ui_scale(pygame.Rect((0, 0), (120, -1))),
                 line_spacing=0.90,
                 object_id="#text_box_30_horizcenter",
@@ -1851,11 +1879,12 @@ class ProfileScreen(Screens):
                 text_kwargs={"m_c": self.the_cat},
             )
 
+            y_adjust = self.condition_data[f"name_{con}"].get_relative_rect().height
             details_rect = ui_scale(pygame.Rect((0, 0), (142, 100)))
             details_rect.bottomleft = (0, 0)
 
             self.condition_data[f"desc_{con}"] = UITextBoxTweaked(
-                con["details"],
+                con[1],
                 details_rect,
                 line_spacing=0.75,
                 object_id="#text_box_22_horizcenter",
@@ -1868,76 +1897,94 @@ class ProfileScreen(Screens):
             x_pos += 152
         return
 
-    def get_condition_details(self, condition):
+    def get_condition_details(self, name):
         """returns the relevant condition details as one string with line breaks"""
         text_list = []
+        cat_name = self.the_cat.name
 
         # collect details for perm conditions
-        if condition in self.the_cat.permanent_conditions:
+        if name in self.the_cat.permanent_condition:
             # display if the cat was born with it
-            if condition.is_congenital:
+            if self.the_cat.permanent_condition[name]["born_with"] is True:
                 text_list.append(i18n.t("general.born_with"))
             else:
                 # moons with the condition if not born with condition
-                moons_with = game.clan.age - condition.moon_gained
+                moons_with = (
+                    game.clan.age - self.the_cat.permanent_condition[name]["moon_start"]
+                )
                 text_list.append(
-                    i18n.t(
-                        "general.had_condition_for",
-                        moons=i18n.t("general.moons_age", count=moons_with),
-                    )
+                    i18n.t("general.had_perm_condition_for", count=moons_with)
                 )
 
             # is permanent
             text_list.append(
-                i18n.t(f"conditions.permanent_conditions.permanent_condition")
+                i18n.t("conditions.permanent_conditions.permanent condition")
             )
 
-            # has complication
-            if condition.current_complication:
-                complication = self.the_cat.get_condition(
-                    condition.current_complication
-                )
-                if complication:
-                    text_list.append(
-                        i18n.t(
-                            f"conditions.temporary_conditions.{complication.name}_alert"
-                        )
+            # infected or festering
+            complication = self.the_cat.permanent_condition[name].get(
+                "complication", None
+            )
+            if complication is not None:
+                if "a festering wound" in self.the_cat.illnesses:
+                    complication = "festering"
+                text_list.append(
+                    i18n.t(
+                        "utility.exclamation", text=i18n.t(f"general.is_{complication}")
                     )
+                )
 
         # collect details for injuries
-        if condition in self.the_cat.temporary_conditions:
+        if name in self.the_cat.injuries:
             # moons with condition
-            moons_with = game.clan.age - condition.moon_gained
-            insert = "general.had_condition_for"
+            keys = self.the_cat.injuries[name].keys()
+            moons_with = game.clan.age - self.the_cat.injuries[name]["moon_start"]
+            insert = "general.had_injury_for"
 
-            if condition == "recovering_from_birth":
+            if name == "recovering from birth":
                 insert = "general.recovering_from_birth_for"
-            elif condition == "pregnant":
+            elif name == "pregnant":
                 insert = "general.pregnant_for"
-            elif condition == "grief_stricken":
-                insert = "screens.profile.grieving_for"
-
-            if condition.infectiousness:
-                text_list.append(i18n.t("screens.profile.infectious_warning"))
 
             text_list.append(
                 i18n.t(insert, moons=i18n.t("general.moons_age", count=moons_with))
             )
 
-            # has complication
-            if condition.current_complication:
-                complication = self.the_cat.get_condition(
-                    condition.current_complication
-                )
-                if complication:
+            # infected or festering
+            if "complication" in keys:
+                complication = self.the_cat.injuries[name]["complication"]
+                if complication is not None:
+                    if "a festering wound" in self.the_cat.illnesses:
+                        complication = "festering"
                     text_list.append(
                         i18n.t(
-                            f"conditions.temporary_conditions.{complication.name}_alert"
+                            "utility.exclamation",
+                            text=i18n.t(f"general.is_{complication}"),
                         )
                     )
 
             # can or can't patrol
-            if condition.severity != "minor":
+            if self.the_cat.injuries[name]["severity"] != "minor":
+                text_list.append(i18n.t("general.cant_work_condition"))
+
+        # collect details for illnesses
+        if name in self.the_cat.illnesses:
+            # moons with condition
+            moons_with = game.clan.age - self.the_cat.illnesses[name]["moon_start"]
+            insert = "screens.profile.sick_for"
+
+            if name == "grief stricken":
+                insert = "screens.profile.grieving_for"
+
+            text_list.append(
+                i18n.t(insert, moons=i18n.t("general.moons_age", count=moons_with))
+            )
+
+            if self.the_cat.illnesses[name]["infectiousness"] != 0:
+                text_list.append(i18n.t("screens.profile.infectious_warning"))
+
+            # can or can't patrol
+            if self.the_cat.illnesses[name]["severity"] != "minor":
                 text_list.append(i18n.t("general.cant_work_condition"))
 
         text = "<br><br>".join(text_list)
@@ -2441,7 +2488,7 @@ class ProfileScreen(Screens):
 
         if biome not in available_biome:
             biome = available_biome[0]
-        if the_cat.age == "newborn" or not the_cat.can_work():
+        if the_cat.age == "newborn" or the_cat.not_working():
             biome = "nest"
 
         biome = biome.lower()

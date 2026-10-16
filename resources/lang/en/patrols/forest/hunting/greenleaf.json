@@ -688,7 +688,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "broken_bone"
+                            "broken bone"
                         ],
                         "scar_pool_override": [
                             "MANLEG",
@@ -1527,7 +1527,7 @@
                             "r_c0"
                         ],
                         "condition": [
-                            "claw_wound"
+                            "claw-wound"
                         ],
                         "non_lethal": true,
                         "scar_pool_override": [
@@ -1958,7 +1958,7 @@
                         "condition": [
                             "sprain",
                             "sore",
-                            "dangerously_cold"
+                            "shivering"
                         ],
                         "death_history": "m_c died after getting too cold on patrol."
                     }
@@ -5551,7 +5551,7 @@
                             "s_c0"
                         ],
                         "condition": [
-                            "small_cut"
+                            "small cut"
                         ]
                     }
                 ]

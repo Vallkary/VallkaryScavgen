@@ -1,0 +1,11 @@
+[
+	{
+		"event_id": "templar_default0",
+		"involved_cats": {
+			"m_c": {}
+		},
+		"strings": [
+			"As m_c slides into {PRONOUN/m_c/poss} new responsibilities, it's clear that {PRONOUN/m_c/subject} senses things beyond the veil of reality."
+		]
+	}
+]

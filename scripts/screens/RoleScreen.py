@@ -8,6 +8,7 @@ import pygame
 import pygame_gui
 
 from scripts.cat.cats import Cat
+from scripts.cat.cats import CatRank
 from scripts.game_structure import image_cache, game
 from ..config import get_config
 from ..ui.elements.text_box_tweaked import UITextBoxTweaked
@@ -54,38 +55,27 @@ class RoleScreen(Screens):
                     self.update_selected_cat()
                 else:
                     print("invalid previous cat", self.previous_cat)
+            elif not get_config("ranks.allow_manual"):
+                CruelLockedAction()
+                pass
             #
             #
             #   ANYTHING BELOW HERE WILL NOT TRIGGER IF CRUEL SEASON DISABLES ROLE SWITCHING
             #                               Ye have been warned
             #
             #
-            elif not get_config("ranks.can_manually_change.all") or (
-                not get_config("ranks.can_manually_change.deputy")
-                and self.the_cat == game.clan.deputy
-            ):
-                CruelLockedAction()
-                pass
-
             elif event.ui_element == self.promote_leader:
-                if not get_config("ranks.can_manually_change.deputy"):
-                    CruelLockedAction()
-                    pass
-                else:
-                    if self.the_cat == game.clan.deputy:
-                        game.clan.deputy = None
-                    game.clan.new_leader(self.the_cat)
-                    if switch_get_value(Switch.sort_type) == "rank":
-                        Cat.sort_cats()
-                    self.update_selected_cat()
+                if self.the_cat == game.clan.deputy:
+                    game.clan.deputy = None
+                game.clan.new_leader(self.the_cat)
+                if switch_get_value(Switch.sort_type) == "rank":
+                    Cat.sort_cats()
+                self.update_selected_cat()
+                self.new_rank_health(CatRank)
             elif event.ui_element == self.promote_deputy:
-                if not get_config("ranks.can_manually_change.deputy"):
-                    CruelLockedAction()
-                    pass
-                else:
-                    game.clan.deputy = self.the_cat
-                    self.the_cat.rank_change(CatRank.DEPUTY, resort=True)
-                    self.update_selected_cat()
+                game.clan.deputy = self.the_cat
+                self.the_cat.rank_change(CatRank.DEPUTY, resort=True)
+                self.update_selected_cat()
             elif event.ui_element == self.switch_warrior:
                 self.the_cat.rank_change(CatRank.WARRIOR, resort=True)
                 self.update_selected_cat()
@@ -317,35 +307,30 @@ class RoleScreen(Screens):
 
         main_dir = "resources/images/"
         paths = {
-            CatRank.LEADER: "icon_leader.png",
-            CatRank.DEPUTY: "icon_deputy.png",
-            CatRank.MEDICINE_CAT: "icon_medic.png",
-            CatRank.MEDICINE_APPRENTICE: "icon_medic_app.png",
-            CatRank.MEDIATOR: "icon_mediator.png",
-            CatRank.MEDIATOR_APPRENTICE: "icon_mediator_app.png",
-            CatRank.WARRIOR: "icon_warrior.png",
-            CatRank.APPRENTICE: "icon_warrior_app.png",
-            CatRank.KITTEN: "icon_kit.png",
-            CatRank.NEWBORN: "icon_kit.png",
-            CatRank.ELDER: "icon_elder.png",
+            CatRank.LEADER: "leader_icon.png",
+            CatRank.DEPUTY: "deputy_icon.png",
+            CatRank.MEDICINE_CAT: "medic_icon.png",
+            CatRank.MEDICINE_APPRENTICE: "medic_app_icon.png",
+            CatRank.MEDIATOR: "mediator_icon.png",
+            CatRank.MEDIATOR_APPRENTICE: "mediator_app_icon.png",
+            CatRank.WARRIOR: "warrior_icon.png",
+            CatRank.APPRENTICE: "warrior_app_icon.png",
+            CatRank.KITTEN: "kit_icon.png",
+            CatRank.NEWBORN: "kit_icon.png",
+            CatRank.ELDER: "elder_icon.png",
         }
 
         if self.the_cat.status.rank in paths:
             icon_path = os.path.join(main_dir, paths[self.the_cat.status.rank])
+        else:
+            icon_path = os.path.join(main_dir, "buttonrank.png")
 
-            self.selected_cat_elements["role_icon"] = pygame_gui.elements.UIImage(
-                ui_scale(pygame.Rect((82, 231), (78, 78))),
-                pygame.transform.scale(
-                    image_cache.load_image(icon_path),
-                    ui_scale_dimensions((78, 78)),
-                ),
-                starting_height=2,
-            )
-
-        self.selected_cat_elements["role_icon_frame"] = pygame_gui.elements.UIImage(
+        self.selected_cat_elements["role_icon"] = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((82, 231), (78, 78))),
-            get_box(BoxStyles.DARK_ROUNDED_BOX, (78, 78)),
-            starting_height=1,
+            pygame.transform.scale(
+                image_cache.load_image(icon_path),
+                ui_scale_dimensions((78, 78)),
+            ),
         )
 
         (

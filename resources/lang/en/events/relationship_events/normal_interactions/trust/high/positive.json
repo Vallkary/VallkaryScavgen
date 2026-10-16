@@ -61,10 +61,6 @@
             "m_c depends on r_c to back {PRONOUN/m_c/object} up during a debate.",
             "m_c and r_c swap secrets with each other."
         ],
-        "involved_cats": {
-            "m_c": {},
-            "r_c": {}
-        },
         "relationship_constraint": [
             {
                 "cats_from": [
@@ -98,7 +94,9 @@
     {
         "event_id": "trust_inc_high4",
         "strings": [
-            "m_c goes to r_c for advice about some recent troubles."
+            "m_c goes to r_c for advice about some recent troubles.",
+            "m_c asks r_c to help {PRONOUN/m_c/object} find the right words to say to a Clanmate.",
+            "m_c asks r_c for help resolving an argument with a friend."
         ],
         "involved_cats": {
             "r_c": {

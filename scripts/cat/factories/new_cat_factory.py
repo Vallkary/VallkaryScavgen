@@ -77,6 +77,9 @@ class NewCatFactory(BaseCatFactory, ABC):
             "gender_dict": gender_dict,
             "pelt": pelt,
             "moons": moons,
+            "healthstat": overrides.get(
+                "healthstat", cls._get_healthstat(status.rank),
+            ),
             "status": status,
             "backstory": overrides.get(
                 "backstory",
@@ -116,6 +119,8 @@ class NewCatFactory(BaseCatFactory, ABC):
         }
 
         cat = Cat(**cat_params)
+        
+        print("gay gay homosexual gay"),
 
         cat.name = Name(
             prefix=overrides.get("prefix"),
@@ -297,6 +302,47 @@ class NewCatFactory(BaseCatFactory, ABC):
     @abstractmethod
     def _get_random_personality(cls, age: CatAge):
         return Personality(kit_trait=age.is_baby())
+
+#    @classmethod
+#    @abstractmethod
+#    def _get_healthstat(cls, rank) -> int:
+
+#        if rank == CatRank.TEMPLAR:
+#           print("templar health"),
+#           return 2
+
+#        elif rank == CatRank.DISCIPLE:
+#            print("disciple health"),
+#            return 3
+
+#        elif rank == CatRank.DEPUTY:
+#            print("deputy health"),
+#            return 2
+
+#        elif rank == CatRank.LEADER:
+#            print("leader health"),
+#            return 5
+
+#        else:
+#         print("base cat")
+#         return 1
+
+
+    @classmethod
+    def _get_healthstat(cls, rank:CatRank) -> int:
+        print("get_healthstat called")
+        rank_health_dict = {
+            CatRank.LEADER: 5,
+            CatRank.DEPUTY: 2,
+            CatRank.TEMPLAR: 2,
+            CatRank.DISCIPLE: 3
+        }
+        print(rank)
+        if rank in rank_health_dict:
+            return rank_health_dict[rank]
+        else:
+            return 1
+
 
     @classmethod
     @abstractmethod

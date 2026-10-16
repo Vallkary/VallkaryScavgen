@@ -1,0 +1,11 @@
+[
+    {
+        "event_id": "disciple_default0",
+        "involved_cats": {
+            "m_c": {}
+        },
+      "strings": [
+        "m_c's attunement has enabled {PRONOUN/m_c/subject} to sense the world in ways utterly alien to {PRONOUN/m_c/poss} peers. m_c now covers {PRONOUN/m_c/poss} eyes, no longer needing sight to navigate the world around {PRONOUN/m_c/subject}."
+      ]
+    }
+]

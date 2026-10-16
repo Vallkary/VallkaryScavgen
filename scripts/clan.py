@@ -53,13 +53,12 @@ from scripts.game_structure.game.switches import (
 )
 from scripts.game_structure import game
 from scripts.housekeeping.datadir import get_save_dir
-from scripts.housekeeping.game_version import get_version_info, SAVE_VERSION_NUMBER
+from scripts.housekeeping.version import get_version_info, SAVE_VERSION_NUMBER
 from scripts.clan_package.clan_symbols import clan_symbol_sprite
 from scripts.clan_package.get_clan_cats import (
     get_living_clan_cat_count,
     find_alive_cats_with_rank,
 )
-from scripts.housekeeping.save_version_retrieval import get_version
 from scripts.screens.screens_core.screens_core import rebuild_top_menu_buttons
 
 
@@ -204,12 +203,6 @@ class Clan:
     @leader_lives.setter
     def leader_lives(self, value):
         self._leader_lives = min(value, get_config("death_related.max_leader_lives"))
-
-    def reset_leader_lives(self):
-        self.leader_lives = randint(
-            get_config("death_related.min_leader_lives"),
-            get_config("death_related.max_leader_lives"),
-        )
 
     # The clan couldn't save itself in time due to issues arising, for example, from this function: "if deputy is not
     # None: self.deputy.status_change('deputy') -> game.clan.remove_med_cat(self)"
@@ -467,7 +460,7 @@ class Clan:
             self.leader = leader
             Cat.all_cats[leader.ID].rank_change(CatRank.LEADER)
             self.leader_predecessors += 1
-            self.reset_leader_lives()
+            self.leader_lives = 9
 
         # todo: this leads nowhere, can it be deleted?
         switch_set_value(Switch.new_leader, None)
@@ -620,8 +613,7 @@ class Clan:
         ) or os.path.exists(
             get_save_dir() + "/" + switch_get_value(Switch.clan_list)[0] + "/clan.json"
         ):
-            version_info = get_version()
-            self.load_clan_json()
+            version_info = self.load_clan_json()
         elif os.path.exists(
             get_save_dir() + "/" + switch_get_value(Switch.clan_list)[0] + "clan.txt"
         ):
@@ -879,6 +871,13 @@ class Clan:
         if game.clan.game_mode != "classic":
             self.load_freshkill_pile(game.clan)
         switch_set_value(Switch.error_message, "")
+
+        # Return Version Info.
+        return {
+            "version_name": clan_data.get("version_name"),
+            "version_commit": clan_data.get("version_commit"),
+            "source_build": clan_data.get("source_build"),
+        }
 
     def load_pregnancy(self, clan):
         """

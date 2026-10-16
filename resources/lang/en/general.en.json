@@ -1,76 +1,76 @@
 {
     "en": {
         "moons_age": {
-            "one": "1 moon",
-            "many": "%{count} moons"
+            "one": "1 twelfth turn",
+            "many": "%{count} twelfth turns"
         },
         "moons_age_in_death": {
-            "one": "dead for 1 moon",
-            "many": "dead for %{count} moons"
+            "one": "dead for 1 twelfth turn",
+            "many": "dead for %{count} twelfth turns"
         },
-        "moon_date": "moon %{moon}",
+        "moon_date": "Turn %{moon}",
         "guide": "guiding ghost",
         "living_group": "%{group} %{rank}",
         "past_no_group": "past %{rank}",
         "past_group": "past %{group} %{rank}",
         "lives": {
-            "one": "1 life",
-            "many": "%{count} lives"
+            "one": "1 health",
+            "many": "%{count} health"
         },
         "leader": {
-            "one": "leader",
-            "many": "leaders"
+            "one": "chieftain",
+            "many": "chieftains"
         },
         "deputy": {
-            "one": "deputy",
-            "many": "deputies"
+            "one": "elite",
+            "many": "elites"
         },
         "warrior": {
-            "one": "warrior",
-            "many": "warriors"
+            "one": "scout",
+            "many": "scouts"
         },
         "medicine cat": {
-            "one": "medicine cat",
-            "many": "medicine cats"
+            "one": "merchant",
+            "many": "merchants"
         },
         "mediator": {
             "one": "mediator",
             "many": "mediators"
         },
         "apprentice": {
-            "one": "apprentice",
-            "many": "apprentices"
+            "one": "trainee",
+            "many": "trainee"
         },
         "medicine cat apprentice": {
-            "one": "medicine cat apprentice",
-            "many": "medicine cat apprentices"
+            "one": "merchant trainee",
+            "many": "merchant trainees"
         },
         "mediator apprentice": {
-            "one": "mediator apprentice",
-            "many": "mediator apprentices"
+            "one": "mediator trainee",
+            "many": "mediator trainees"
         },
         "queen": {
-            "one": "queen",
-            "many": "queens"
+            "one": "kit-parent",
+            "many": "kit-parents"
         },
         "queen/pregnant": {
-            "one": "queen/pregnant cat",
-            "many": "queens/pregnant cats"
+            "one": "kit-parent",
+            "many": "kit-parents"
         },
         "newborn": {
             "one": "newborn",
             "many": "newborns"
         },
         "kitten": {
-            "one": "kitten",
-            "many": "kittens"
+            "one": "kit",
+            "many": "kits"
         },
         "kitten_profile": "young",
         "adolescent": "adolescent",
         "young adult": "young adult",
         "adult": "adult",
-        "senior adult": "senior adult",
-        "senior": "senior",
+        "senior adult": "elder adult",
+        "senior": "elder",
         "kit": {
             "one": "kit",
             "many": "kits"
@@ -88,16 +88,16 @@
             "many": "rogues"
         },
         "kittypet": {
-            "one": "kittypet",
-            "many": "kittypets"
+            "one": "marked",
+            "many": "marked"
         },
         "former Clancat": {
-            "one": "former Clancat",
-            "many": "former Clancats"
+            "one": "former Tribe member",
+            "many": "former Tribe members"
         },
         "clancat": {
-            "one": "Clancat",
-            "many": "Clancats"
+            "one": "Tribe member",
+            "many": "Tribe members"
         },
         "exiled": {
             "one": "exiled from",
@@ -110,9 +110,9 @@
         },
         "are_mates": "mates",
         "ex_mate": "ex-mate",
-        "she-cat": "she-cat",
-        "tom": "tom",
-        "cat": "cat",
+        "she-cat": "kit-carrier",
+        "tom": "kit-giver",
+        "cat": "scavenger",
         "female": "female",
         "male": "male",
         "trans female": "trans female",
@@ -120,18 +120,18 @@
         "nonbinary": "nonbinary",
         "is": "is",
         "are": "are",
-        "can_work": "This cat can work",
-        "cant_work": "This cat isn't able to work",
+        "can_work": "This scavenger can work",
+        "cant_work": "This scavenger isn't able to work",
         "cant_work_condition": "Can't work with this condition",
         "exp_label": "exp: %{exp}",
-        "newleaf": "newleaf",
-        "Newleaf": "Newleaf",
-        "greenleaf": "greenleaf",
-        "Greenleaf": "Greenleaf",
-        "leaf-fall": "leaf-fall",
-        "Leaf-fall": "Leaf-fall",
-        "leaf-bare": "leaf-bare",
-        "Leaf-bare": "Leaf-bare",
+        "newleaf": "warming quarter",
+        "Newleaf": "Warming Quarter",
+        "greenleaf": "warm quarter",
+        "Greenleaf": "Warm Quarter",
+        "leaf-fall": "cooling quarter",
+        "Leaf-fall": "Cooling Quarter",
+        "leaf-bare": "cool quarter",
+        "Leaf-bare": "Cool Quarter",
         "relation_BLOOD": "",
         "relation_ADOPTIVE": "adoptive",
         "relation_HALF_BLOOD": "half sibling",
@@ -164,13 +164,13 @@
         "cousin_male": "cousin",
         "cousin_female": "cousin",
         "cousin_nb": "cousin",
-        "clan": "%{name}Clan",
-        "starclan": "StarClan",
-        "dark_forest": "Dark Forest",
-        "the_dark_forest": "The Dark Forest",
+        "clan": "%{name} Tribe",
+        "starclan": "the Void",
+        "dark_forest": "Ripplespace",
+        "the_dark_forest": "Ripplespace",
         "unknown_residence": "Unknown Residence",
-        "your_clan": "Your Clan",
-        "cotc": "Cats Outside the Clan",
+        "your_clan": "Your Tribe",
+        "cotc": "Scavengers Outside the Tribe",
         "empty": "empty",
         "none": "none",
         "name_search": "name search",
@@ -195,13 +195,13 @@
         "mentor_label": "mentor: %{mentor}",
         "apprentice_label": {
             "zero": "",
-            "one": "apprentice: %{apprentices}",
-            "many": "apprentices: %{apprentices}"
+            "one": "pupil: %{apprentices}",
+            "many": "pupils: %{apprentices}"
         },
         "former_apprentice_history": "%{name} previously mentored %{apprentices}.",
         "former_apprentice_label": {
-            "one": "1 former apprentice",
-            "many": "%{count} former apprentices"
+            "one": "1 former pupil",
+            "many": "%{count} former pupils"
         },
         "apprentice_extra": {
             "zero": "",
@@ -213,10 +213,19 @@
         "remove_favorite": "Remove favorite",
         "has_permanent_condition": "has a permanent condition",
         "born_with": "born with this condition",
-        "had_condition_for": "has had this condition for %{moons}",
+        "had_perm_condition_for": {
+            "one": "has had this condtion for %{count} twelfth turn",
+            "many": "has had this condition for %{count} twelfth turns"
+        },
         "had_injury_for": "has been hurt for %{moons}",
         "pregnant_for": "has been pregnant for %{moons}",
         "recovering_from_birth_for": "has been recovering for %{moons}",
+        "sick": "sick",
+        "injured": "injured",
+        "grieving": "grieving",
+        "fleas": "flea-ridden",
+        "is_infected": "is infected",
+        "is_festering": "is festering",
         "got_condition": "%{cat} got: %{conditions}."
     }
 }

@@ -1,7 +1,7 @@
 from dataclasses import dataclass, field
 from typing import Union, Optional
 
-from scripts.cat.constants import TEMPORARY_CONDITIONS, PERMANENT_CONDITIONS
+from scripts.cat.constants import ILLNESSES, PERMANENT, INJURIES
 from scripts.cat.enums import CatRank, CatAge, CatGroup
 from scripts.cat.personality import Personality
 from scripts.cat.skills import SkillPath
@@ -153,8 +153,9 @@ class TextPoolEvent:
                     condition_constraint = constraints["health"]["condition"]
                     if "-" in condition_constraint[0]:
                         weight += len(
-                            list(TEMPORARY_CONDITIONS.keys())
-                            + list(PERMANENT_CONDITIONS.keys())
+                            list(INJURIES.keys())
+                            + list(ILLNESSES.keys())
+                            + list(PERMANENT.keys())
                         ) - len(condition_constraint)
                     else:
                         weight += len(condition_constraint)

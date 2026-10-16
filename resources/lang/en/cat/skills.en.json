@@ -48,11 +48,11 @@
         "SWIMMER,0.5": "enjoys swimming",
         "SWIMMER,1": "good swimmer",
         "SWIMMER,2": "talented swimmer",
-        "SWIMMER,3": "fish-like swimmer",
+        "SWIMMER,3": "eel-like swimmer",
 
         "stealth": "stealth",
         "STEALTH,0": "hide and seek champ",
-        "STEALTH,0.5": "light-pawed",
+        "STEALTH,0.5": "steps lightly",
         "STEALTH,1": "sneaky",
         "STEALTH,2": "very stealthy",
         "STEALTH,3": "one with shadows",
@@ -94,7 +94,7 @@
 
         "caretaking": "caretaking",
         "KIT,0": "good playmate",
-        "KIT,0.5": "entertains kittens",
+        "KIT,0.5": "entertains kits",
         "KIT,1": "good kitsitter",
         "KIT,2": "great kitsitter",
         "KIT,3": "beloved kitsitter",
@@ -111,7 +111,7 @@
         "LORE,0.5": "interested in history",
         "LORE,1": "learner of lore",
         "LORE,2": "lore keeper",
-        "LORE,3": "lore master",
+        "LORE,3": "historian",
 
         "campkeeping": "campkeeping",
         "CAMP,0": "always tidies up",
@@ -153,14 +153,14 @@
         "CLAIRVOYANT,0.5": "oddly insightful",
         "CLAIRVOYANT,1": "somewhat clairvoyant",
         "CLAIRVOYANT,2": "fairly clairvoyant",
-        "CLAIRVOYANT,3": "incredibly clairvoyant",
+        "CLAIRVOYANT,3": "clairvoyant",
 
         "prophesying": "prophesying",
         "PROPHET,0": "likes riddles",
         "PROPHET,0.5": "studies prophecies",
         "PROPHET,1": "prophecy seeker",
         "PROPHET,2": "prophecy interpreter",
-        "PROPHET,3": "prophet",
+        "PROPHET,3": "divinator",
 
         "ghosts": "ghosts",
         "GHOST,0": "morbid curiosity",

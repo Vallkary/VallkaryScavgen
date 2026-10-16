@@ -5,8 +5,10 @@ from typing import Union
 from pydantic import BaseModel, ConfigDict, Field
 from pydantic_core import MISSING
 
-from scripts.models.common.condition import ConditionEnum
 from scripts.models.common.gather_cat import GatherCat
+from scripts.models.common.illness import Illness
+from scripts.models.common.injury import Injury
+from scripts.models.common.perm_condition import PermCondition
 from scripts.models.common.scar import Scar
 
 
@@ -24,7 +26,7 @@ class Condition(BaseModel):
         MISSING,
         description="Set to True to prevent this condition from killing the cat. It's not necessary if the condition is already non-lethal (eg. scrapes)",
     )
-    condition: list[Union[ConditionEnum]] = Field(
+    condition: list[Union[Injury, Illness, PermCondition]] = Field(
         ...,
         description="List of possible conditions. One condition will be chosen from this list. You can also utilize Injury Pools",
     )
