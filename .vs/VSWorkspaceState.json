@@ -5,12 +5,9 @@
     "\\resources\\lang",
     "\\resources\\lang\\en",
     "\\resources\\lang\\en\\events",
-    "\\resources\\lang\\en\\events\\death",
-    "\\resources\\lang\\en\\events\\injury",
     "\\scripts",
     "\\scripts\\models",
     "\\scripts\\models\\shortevent"
   ],
-  "SelectedNode": "\\resources\\lang\\en\\events\\death\\general.json",
   "PreviewInSolutionExplorer": false
 }

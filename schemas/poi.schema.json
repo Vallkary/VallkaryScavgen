@@ -7,7 +7,12 @@
         "forest",
         "beach",
         "wetlands",
-        "desert"
+        "desert",
+        "elevated",
+        "dark",
+        "wet",
+        "dry",
+        "swampy"
       ],
       "title": "BiomeNoExclusions",
       "type": "string"
