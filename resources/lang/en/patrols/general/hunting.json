@@ -10453,241 +10453,289 @@
             }
         ]
     },
-    {
-        "event_id": "gen_hunt_ratking",
-        "types": [
-            "hunting"
+  {
+    "event_id": "gen_hunt_ratking",
+    "types": [
+      "hunting"
+    ],
+    "frequency": 1,
+    "required_cat_types": {
+      "patrol_cats": [
+        4,
+        6
+      ]
+    },
+    "chance_of_success": 20,
+    "patrol_art": "hunt_general_intro",
+    "intro_strings": [
+      "A legend has been sighted. Recently, warriors have reported sighting a strange mass of rats stuck together by their tails, larger and more dangerous than anything the Clan has seen. Will p_l's patrol look for this legendary monster?"
+    ],
+    "decline_strings": [
+      "No. Such a thing can't exist, right? It has to be an elder's imagination. p_l decides to take {PRONOUN/p_l/poss} patrol elsewhere to hunt."
+    ],
+    "success_outcomes": [
+      {
+        "frequency": 4,
+        "strings": [
+          "The Rat King's lair is heavily defended by smaller rats. While the patrol doesn't find any sign of the rat king, they manage to defeat and bring back a feast of small rats."
         ],
-        "frequency": 1,
-        "required_cat_types": {
-            "patrol_cats": [
-                4,
-                6
-            ]
-        },
-        "chance_of_success": 20,
-        "patrol_art": "hunt_general_intro",
-        "intro_strings": [
-            "A legend has been sighted. Recently, warriors have reported sighting a strange mass of rats stuck together by their tails, larger and more dangerous than anything the Clan has seen. Will p_l's patrol look for this legendary monster?"
-        ],
-        "decline_strings": [
-            "No. Such a thing can't exist, right? It has to be an elder's imagination. p_l decides to take {PRONOUN/p_l/poss} patrol elsewhere to hunt."
-        ],
-        "success_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "The Rat King's lair is heavily defended by smaller rats. While the patrol doesn't find any sign of the rat king, they manage to defeat and bring back a feast of small rats."
-                ],
-                "exp_gained": 30,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_medium"
-                    }
-                ]
-            },
-            {
-                "frequency": 1,
-                "strings": [
-                    "The rats defending the Rat King's lair are more numerous than they thought. The patrol catches whatever rats they can, but p_l swears that {PRONOUN/p_l/subject} saw it — multiple eyes glowing in the dark, watching them."
-                ],
-                "exp_gained": 30,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_large"
-                    }
-                ]
-            },
-            {
-                "frequency": 4,
-                "strings": [
-                    "The waves of rats overwhelm the rest of the patrol, but s_c0 can see the Rat King writhing within its nest. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/bolt/bolts} away from the others, trusting {PRONOUN/s_c0/poss} claws to take on the legend. It dies with a horrible shriek, as the rest of the patrol watch in awe."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {
-                            "skill": [
-                                "HUNTER,3"
-                            ]
-                        }
-                    }
-                },
-                "exp_gained": 30,
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "patrol_cats"
-                        ],
-                        "cats_to": [
-                            "s_c0"
-                        ],
-                        "values": [
-                            "respect"
-                        ],
-                        "mutual": false,
-                        "amount": 18,
-                        "log": {
-                            "cats_from": "cat_from witnessed the birth of a legend when cat_to killed the Rat King."
-                        }
-                    },
-                    {
-                        "cats_from": [
-                            "clan"
-                        ],
-                        "cats_to": [
-                            "patrol_cats"
-                        ],
-                        "values": [
-                            "respect"
-                        ],
-                        "mutual": false,
-                        "amount": 10,
-                        "log": {
-                            "cats_from": "cat_from watches cat_to and {PRONOUN/cat_to/poss} patrol return triumphant from the vanquishing of the Rat King."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_large"
-                    }
-                ]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "frequency": 4,
-                "strings": [
-                    "There are more rats defending the Rat King's lair than they thought. Fighting off waves of them, the patrol retreats back to the Clan with empty paws."
-                ],
-                "exp_gained": 0,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_tiny"
-                    }
-                ]
-            },
-            {
-                "frequency": 3,
-                "strings": [
-                    "The Rat King and their minions overwhelm the patrol, biting into fur and limbs. p_l orders a retreat, and {PRONOUN/p_l/subject} {VERB/p_l/hope/hopes} the Clan can heal so many wounded."
-                ],
-                "exp_gained": 0,
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_tiny"
-                    }
-                ],
-                "condition": [
-                    {
-                        "cats": [
-                            "patrol_cats"
-                        ],
-                        "condition": [
-                            "rat_bite"
-                        ],
-                        "scar_pool_override": [
-                            "RATBITE"
-                        ],
-                        "scar_history": "m_c carries a scar from fighting a Rat King.",
-                        "death_history": "m_c died from {PRONOUN/m_c/poss} wounds after battling a Rat King."
-                    }
-                ]
-            },
-            {
-                "frequency": 3,
-                "strings": [
-                    "s_c0 knows {PRONOUN/s_c0/subject} {VERB/s_c0/are/is} one of the Clan's greatest hunters. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/spot/spots} the Rat King and charge into its lair. But the King proves too great a foe for a single cat, and it sends s_c0 back with wounds to tell {PRONOUN/s_c0/poss} tale."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {
-                            "skill": [
-                                "HUNTER,2"
-                            ]
-                        }
-                    }
-                },
-                "exp_gained": 0,
-                "relationship_changes": [
-                    {
-                        "cats_from": [
-                            "clan",
-                            "high_aggress"
-                        ],
-                        "cats_to": [
-                            "s_c0"
-                        ],
-                        "values": [
-                            "respect"
-                        ],
-                        "mutual": false,
-                        "amount": 8,
-                        "log": {
-                            "cats_from": "cat_from heard cat_to's stories of facing the Rat King."
-                        }
-                    }
-                ],
-                "supply": [
-                    {
-                        "type": "freshkill",
-                        "adjust": "increase_tiny"
-                    }
-                ],
-                "condition": [
-                    {
-                        "cats": [
-                            "patrol_cats"
-                        ],
-                        "condition": [
-                            "rat_bite"
-                        ],
-                        "scar_pool_override": [
-                            "RATBITE"
-                        ],
-                        "scar_history": "m_c carries a scar from fighting a Rat King.",
-                        "death_history": "m_c died from {PRONOUN/m_c/poss} wounds after battling a Rat King."
-                    }
-                ]
-            },
-            {
-                "frequency": 3,
-                "strings": [
-                    "s_c0 knows {PRONOUN/s_c0/subject} {VERB/s_c0/are/is} one of the Clan's greatest hunters. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/spot/spots} the Rat King and {VERB/s_c0/charge/charges} into its lair. But the King proves too great a foe for a single cat, and it kills the would-be kingslayer."
-                ],
-                "involved_cats": {
-                    "s_c0": {
-                        "prior_abbreviation": [
-                            "any"
-                        ],
-                        "stat": {
-                            "skill": [
-                                "HUNTER,2"
-                            ]
-                        }
-                    }
-                },
-                "exp_gained": 0,
-                "death": [
-                    {
-                        "cats": [
-                            "s_c0"
-                        ],
-                        "history": "m_c died from {PRONOUN/m_c/poss} wounds after battling a Rat King."
-                    }
-                ]
-            }
+        "exp_gained": 30,
+        "supply": [
+          {
+            "type": "freshkill",
+            "adjust": "increase_medium"
+          }
         ]
-    }
+      },
+      {
+        "frequency": 1,
+        "strings": [
+          "The rats defending the Rat King's lair are more numerous than they thought. The patrol catches whatever rats they can, but p_l swears that {PRONOUN/p_l/subject} saw it — multiple eyes glowing in the dark, watching them."
+        ],
+        "exp_gained": 30,
+        "supply": [
+          {
+            "type": "freshkill",
+            "adjust": "increase_large"
+          }
+        ]
+      },
+      {
+        "frequency": 4,
+        "strings": [
+          "The waves of rats overwhelm the rest of the patrol, but s_c0 can see the Rat King writhing within its nest. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/bolt/bolts} away from the others, trusting {PRONOUN/s_c0/poss} claws to take on the legend. It dies with a horrible shriek, as the rest of the patrol watch in awe."
+        ],
+        "involved_cats": {
+          "s_c0": {
+            "prior_abbreviation": [
+              "any"
+            ],
+            "stat": {
+              "skill": [
+                "HUNTER,3"
+              ]
+            }
+          }
+        },
+        "exp_gained": 30,
+        "relationship_changes": [
+          {
+            "cats_from": [
+              "patrol_cats"
+            ],
+            "cats_to": [
+              "s_c0"
+            ],
+            "values": [
+              "respect"
+            ],
+            "mutual": false,
+            "amount": 18,
+            "log": {
+              "cats_from": "cat_from witnessed the birth of a legend when cat_to killed the Rat King."
+            }
+          },
+          {
+            "cats_from": [
+              "clan"
+            ],
+            "cats_to": [
+              "patrol_cats"
+            ],
+            "values": [
+              "respect"
+            ],
+            "mutual": false,
+            "amount": 10,
+            "log": {
+              "cats_from": "cat_from watches cat_to and {PRONOUN/cat_to/poss} patrol return triumphant from the vanquishing of the Rat King."
+            }
+          }
+        ],
+        "supply": [
+          {
+            "type": "freshkill",
+            "adjust": "increase_large"
+          }
+        ]
+      }
+    ],
+    "fail_outcomes": [
+      {
+        "frequency": 4,
+        "strings": [
+          "There are more rats defending the Rat King's lair than they thought. Fighting off waves of them, the patrol retreats back to the Clan with empty paws."
+        ],
+        "exp_gained": 0,
+        "supply": [
+          {
+            "type": "freshkill",
+            "adjust": "increase_tiny"
+          }
+        ]
+      },
+      {
+        "frequency": 3,
+        "strings": [
+          "The Rat King and their minions overwhelm the patrol, biting into fur and limbs. p_l orders a retreat, and {PRONOUN/p_l/subject} {VERB/p_l/hope/hopes} the Clan can heal so many wounded."
+        ],
+        "exp_gained": 0,
+        "supply": [
+          {
+            "type": "freshkill",
+            "adjust": "increase_tiny"
+          }
+        ],
+        "condition": [
+          {
+            "cats": [
+              "patrol_cats"
+            ],
+            "condition": [
+              "rat_bite"
+            ],
+            "scar_pool_override": [
+              "RATBITE"
+            ],
+            "scar_history": "m_c carries a scar from fighting a Rat King.",
+            "death_history": "m_c died from {PRONOUN/m_c/poss} wounds after battling a Rat King."
+          }
+        ]
+      },
+      {
+        "frequency": 3,
+        "strings": [
+          "s_c0 knows {PRONOUN/s_c0/subject} {VERB/s_c0/are/is} one of the Clan's greatest hunters. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/spot/spots} the Rat King and charge into its lair. But the King proves too great a foe for a single cat, and it sends s_c0 back with wounds to tell {PRONOUN/s_c0/poss} tale."
+        ],
+        "involved_cats": {
+          "s_c0": {
+            "prior_abbreviation": [
+              "any"
+            ],
+            "stat": {
+              "skill": [
+                "HUNTER,2"
+              ]
+            }
+          }
+        },
+        "exp_gained": 0,
+        "relationship_changes": [
+          {
+            "cats_from": [
+              "clan",
+              "high_aggress"
+            ],
+            "cats_to": [
+              "s_c0"
+            ],
+            "values": [
+              "respect"
+            ],
+            "mutual": false,
+            "amount": 8,
+            "log": {
+              "cats_from": "cat_from heard cat_to's stories of facing the Rat King."
+            }
+          }
+        ],
+        "supply": [
+          {
+            "type": "freshkill",
+            "adjust": "increase_tiny"
+          }
+        ],
+        "condition": [
+          {
+            "cats": [
+              "patrol_cats"
+            ],
+            "condition": [
+              "rat_bite"
+            ],
+            "scar_pool_override": [
+              "RATBITE"
+            ],
+            "scar_history": "m_c carries a scar from fighting a Rat King.",
+            "death_history": "m_c died from {PRONOUN/m_c/poss} wounds after battling a Rat King."
+          }
+        ]
+      },
+      {
+        "frequency": 3,
+        "strings": [
+          "s_c0 knows {PRONOUN/s_c0/subject} {VERB/s_c0/are/is} one of the Clan's greatest hunters. {PRONOUN/s_c0/subject/CAP} {VERB/s_c0/spot/spots} the Rat King and {VERB/s_c0/charge/charges} into its lair. But the King proves too great a foe for a single cat, and it kills the would-be kingslayer."
+        ],
+        "involved_cats": {
+          "s_c0": {
+            "prior_abbreviation": [
+              "any"
+            ],
+            "stat": {
+              "skill": [
+                "HUNTER,2"
+              ]
+            }
+          }
+        },
+        "exp_gained": 0,
+        "death": [
+          {
+            "cats": [
+              "s_c0"
+            ],
+            "history": "m_c died from {PRONOUN/m_c/poss} wounds after battling a Rat King."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "event_id": "test",
+    "types": [],
+    "frequency": 4,
+    "required_cat_types": {
+      "patrol_cats": [ 1, 6 ]
+    },
+    "chance_of_success": 100,
+    "patrol_art": "art.png",
+    "intro_strings": [ "Patrol heads out to do some-such." ],
+    "decline_strings": [ "Patrol turns around" ],
+    "success_outcomes": [
+      {
+        "frequency": 4,
+        "strings": [
+          "result"
+        ],
+        "exp_gained": 10,
+        "relationship_changes": [
+          {
+            "cats_to": [
+              "test"
+            ],
+            "cats_from": [
+              "test"
+            ],
+            "mutual": false,
+            "values": [
+              "test"
+            ],
+            "amount": 5,
+            "log": {
+              "cats_from": "test"
+            }
+          }
+        ],
+        "supply": [
+          {
+            "type": "freshkill",
+            "adjust": "increase_"
+          }
+        ]
+      }
+    ],
+    "fail_outcomes": [
+      "TextPoolEvent"
+    ]
+  }
 ]
