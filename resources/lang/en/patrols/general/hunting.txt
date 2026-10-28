@@ -1,0 +1,295 @@
+[
+    '''
+    {
+        "event_id": "test",
+        "types": [
+            "hunting"
+        ],
+        "frequency": 1-4,
+        "required_cat_types": {
+            "patrol_cats": [1, 6]
+        },
+        "involved_cats": {
+                "r_c0/p_l/s_c0": {
+                    "prior_abbreviation": ["any"],
+                    "stat": {
+                        "skill": [
+                            "SKILL,1",
+                            "SKILL,1"
+                        ],
+                        "trait": [
+                            "trait",
+                            "trait"
+                        ]
+                    }
+                    "past/status": [
+                        "blah",
+                        "blah"
+                    ]
+                }
+        },
+        "relationship_constraint": [],
+        "chance_of_success": 30,
+        "patrol_art": "cat_sprites/gen_hunt_sneakprey_Wr"
+        "intro_strings": ["Patrol heads out to do some-such."],
+        "decline_strings": ["Patrol turns around"],
+        "success_outcomes": [
+            {
+                "frequency": 1-4,
+                "strings": [
+                    ""
+                ]
+                "exp_gained": #,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": bool,
+                        "values": [
+                            "relationship"
+                        ],
+                        "amount": #,
+                        "log": {
+                            "cats_from": "cat_to blah blah blah cat_from blah blah."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_low/medium/high/whatever"
+                    }
+                ]
+            },
+            {
+                "frequency": 1-4,
+                "strings": [
+                    ""
+                ]
+                "exp_gained": #,
+                "relationship_changes/death/condition": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": bool,
+                        "values": [
+                            "relationship"
+                        ],
+                        "amount": #,
+                        "log": {
+                            "cats_from": "special cat_to blah blah blah cat_from blah blah."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_low/medium/high/whatever"
+                    }
+                ]
+            },
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 1-4,
+                "strings": [
+                    ""
+                ]
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": bool,
+                        "values": [
+                            "relationship"
+                        ],
+                        "amount": -#,
+                        "log": {
+                            "cats_from": "cat_to blah blah blah cat_from blah blah."
+                        }
+                    }
+                ],
+            },
+            {
+                "frequency": 1-4,
+                "strings": [
+                    ""
+                ]
+                "exp_gained": #,
+                "relationship_changes/death/condition": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": bool,
+                        "values": [
+                            "relationship"
+                        ],
+                        "amount": #,
+                        "log": {
+                            "cats_from": "special cat_to blah blah blah cat_from blah blah."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_low/medium/high/whatever"
+                    }
+                ]
+            },
+        ],
+    },
+    '''
+    {
+        "event_id": "gen_hunt_soloeggbug",
+        "types": [
+            "hunting"
+        ],
+        "required_cat_types": {
+            "patrol_cats": [1, 1]
+        },
+        "chance_of_success": 30,
+        "patrol_art": "cat_sprites/gen_hunt_sneakprey_Wr"
+        "intro_strings": ["Patrol heads out to do some-such."],
+        "decline_strings": ["Patrol turns around"],
+        "success_outcomes": [
+            {
+                "frequency": 1-4,
+                "strings": [
+                    ""
+                ]
+                "exp_gained": #,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": bool,
+                        "values": [
+                            "relationship"
+                        ],
+                        "amount": #,
+                        "log": {
+                            "cats_from": "cat_to blah blah blah cat_from blah blah."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_low/medium/high/whatever"
+                    }
+                ]
+            },
+            {
+                "frequency": 1-4,
+                "strings": [
+                    ""
+                ]
+                "exp_gained": #,
+                "relationship_changes/death/condition": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": bool,
+                        "values": [
+                            "relationship"
+                        ],
+                        "amount": #,
+                        "log": {
+                            "cats_from": "special cat_to blah blah blah cat_from blah blah."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_low/medium/high/whatever"
+                    }
+                ]
+            },
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 1-4,
+                "strings": [
+                    ""
+                ]
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": bool,
+                        "values": [
+                            "relationship"
+                        ],
+                        "amount": -#,
+                        "log": {
+                            "cats_from": "cat_to blah blah blah cat_from blah blah."
+                        }
+                    }
+                ],
+            },
+            {
+                "frequency": 1-4,
+                "strings": [
+                    ""
+                ]
+                "exp_gained": #,
+                "relationship_changes/death/condition": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": bool,
+                        "values": [
+                            "relationship"
+                        ],
+                        "amount": #,
+                        "log": {
+                            "cats_from": "special cat_to blah blah blah cat_from blah blah."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_low/medium/high/whatever"
+                    }
+                ]
+            },
+        ],
+    },
+]

@@ -10423,25 +10423,5 @@
         "death": "m_c was killed by a predator on a solo hunt."
       }
     ]
-  },
-
-
-  {
-    "event_id": "scav_death_endofcyclesolo_rain1",
-    "location": [ "any" ],
-    "season": [ "any" ],
-    "tags": [],
-    "frequency": 0,
-    "event_text": "",
-    "m_c": {
-      "status": [ "" ],
-      "dies": true
-    },
-    "history": [
-      {
-        "cats": [ "m_c" ],
-        "death": ""
-      }
-    ]
   }
 ]

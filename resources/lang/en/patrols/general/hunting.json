@@ -10689,53 +10689,5 @@
         ]
       }
     ]
-  },
-  {
-    "event_id": "test",
-    "types": [],
-    "frequency": 4,
-    "required_cat_types": {
-      "patrol_cats": [ 1, 6 ]
-    },
-    "chance_of_success": 100,
-    "patrol_art": "art.png",
-    "intro_strings": [ "Patrol heads out to do some-such." ],
-    "decline_strings": [ "Patrol turns around" ],
-    "success_outcomes": [
-      {
-        "frequency": 4,
-        "strings": [
-          "result"
-        ],
-        "exp_gained": 10,
-        "relationship_changes": [
-          {
-            "cats_to": [
-              "test"
-            ],
-            "cats_from": [
-              "test"
-            ],
-            "mutual": false,
-            "values": [
-              "test"
-            ],
-            "amount": 5,
-            "log": {
-              "cats_from": "test"
-            }
-          }
-        ],
-        "supply": [
-          {
-            "type": "freshkill",
-            "adjust": "increase_"
-          }
-        ]
-      }
-    ],
-    "fail_outcomes": [
-      "TextPoolEvent"
-    ]
   }
 ]

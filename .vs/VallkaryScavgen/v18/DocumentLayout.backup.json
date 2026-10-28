@@ -3,16 +3,52 @@
   "WorkspaceRootPath": "C:\\Users\\camha\\OneDrive\\Documents\\GitHub\\VallkaryScavgen\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\camha\\OneDrive\\Documents\\GitHub\\VallkaryScavgen\\resources\\lang\\en\\patrols\\general\\hunting.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:resources\\lang\\en\\patrols\\general\\hunting.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\camha\\OneDrive\\Documents\\GitHub\\VallkaryScavgen\\resources\\lang\\en\\patrols\\general\\hunting.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:resources\\lang\\en\\patrols\\general\\hunting.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\camha\\OneDrive\\Documents\\GitHub\\VallkaryScavgen\\docs\\dev\\writing\\patrols\\patrols.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:docs\\dev\\writing\\patrols\\patrols.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\camha\\OneDrive\\Documents\\GitHub\\VallkaryScavgen\\scripts\\cat\\factories\\new_cat_factory.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:scripts\\cat\\factories\\new_cat_factory.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\camha\\OneDrive\\Documents\\GitHub\\VallkaryScavgen\\scripts\\clan.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:scripts\\clan.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\camha\\OneDrive\\Documents\\GitHub\\VallkaryScavgen\\scripts\\cat\\factories\\load_cat_factory.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:scripts\\cat\\factories\\load_cat_factory.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\camha\\OneDrive\\Documents\\GitHub\\VallkaryScavgen\\scripts\\cat\\cats.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:scripts\\cat\\cats.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\camha\\OneDrive\\Documents\\GitHub\\VallkaryScavgen\\scripts\\events_module\\ceremony\\perform_ceremony.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:scripts\\events_module\\ceremony\\perform_ceremony.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\camha\\OneDrive\\Documents\\GitHub\\VallkaryScavgen\\resources\\lang\\en\\events\\death\\general.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:resources\\lang\\en\\events\\death\\general.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\camha\\OneDrive\\Documents\\GitHub\\VallkaryScavgen\\resources\\dicts\\points_of_interest.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:resources\\dicts\\points_of_interest.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\camha\\OneDrive\\Documents\\GitHub\\VallkaryScavgen\\resources\\lang\\en\\points_of_interest.en.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:resources\\lang\\en\\points_of_interest.en.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\camha\\OneDrive\\Documents\\GitHub\\VallkaryScavgen\\resources\\dicts\\points_of_interest.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:resources\\dicts\\points_of_interest.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\camha\\OneDrive\\Documents\\GitHub\\VallkaryScavgen\\docs\\dev\\writing\\reference\\tag-lists.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:docs\\dev\\writing\\reference\\tag-lists.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\camha\\OneDrive\\Documents\\GitHub\\VallkaryScavgen\\scripts\\models\\common\\biome.py||{8B382828-6202-11D1-8870-0000F87579D2}",
@@ -34,11 +70,125 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "patrols.md",
+              "DocumentMoniker": "C:\\Users\\camha\\OneDrive\\Documents\\GitHub\\VallkaryScavgen\\docs\\dev\\writing\\patrols\\patrols.md",
+              "RelativeDocumentMoniker": "docs\\dev\\writing\\patrols\\patrols.md",
+              "ToolTip": "C:\\Users\\camha\\OneDrive\\Documents\\GitHub\\VallkaryScavgen\\docs\\dev\\writing\\patrols\\patrols.md",
+              "RelativeToolTip": "docs\\dev\\writing\\patrols\\patrols.md",
+              "ViewState": "AgIAAHgAAAAAAAAAAAAAAHwAAABeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-10-27T13:13:12.118Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "hunting.txt",
+              "DocumentMoniker": "C:\\Users\\camha\\OneDrive\\Documents\\GitHub\\VallkaryScavgen\\resources\\lang\\en\\patrols\\general\\hunting.txt",
+              "RelativeDocumentMoniker": "resources\\lang\\en\\patrols\\general\\hunting.txt",
+              "ToolTip": "C:\\Users\\camha\\OneDrive\\Documents\\GitHub\\VallkaryScavgen\\resources\\lang\\en\\patrols\\general\\hunting.txt",
+              "RelativeToolTip": "resources\\lang\\en\\patrols\\general\\hunting.txt",
+              "ViewState": "AgIAACYBAAAAAAAAAAAAAKgAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-10-27T13:11:08.23Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "hunting.json",
+              "DocumentMoniker": "C:\\Users\\camha\\OneDrive\\Documents\\GitHub\\VallkaryScavgen\\resources\\lang\\en\\patrols\\general\\hunting.json",
+              "RelativeDocumentMoniker": "resources\\lang\\en\\patrols\\general\\hunting.json",
+              "ToolTip": "C:\\Users\\camha\\OneDrive\\Documents\\GitHub\\VallkaryScavgen\\resources\\lang\\en\\patrols\\general\\hunting.json",
+              "RelativeToolTip": "resources\\lang\\en\\patrols\\general\\hunting.json",
+              "ViewState": "AgIAAOMBAAAAAAAAAAAAAPUBAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-10-19T02:31:41.598Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "clan.py",
+              "DocumentMoniker": "C:\\Users\\camha\\OneDrive\\Documents\\GitHub\\VallkaryScavgen\\scripts\\clan.py",
+              "RelativeDocumentMoniker": "scripts\\clan.py",
+              "ToolTip": "C:\\Users\\camha\\OneDrive\\Documents\\GitHub\\VallkaryScavgen\\scripts\\clan.py",
+              "RelativeToolTip": "scripts\\clan.py",
+              "ViewState": "AgIAAMoAAAAAAAAAAAAiwNMAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-10-23T00:15:44.024Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "new_cat_factory.py",
+              "DocumentMoniker": "C:\\Users\\camha\\OneDrive\\Documents\\GitHub\\VallkaryScavgen\\scripts\\cat\\factories\\new_cat_factory.py",
+              "RelativeDocumentMoniker": "scripts\\cat\\factories\\new_cat_factory.py",
+              "ToolTip": "C:\\Users\\camha\\OneDrive\\Documents\\GitHub\\VallkaryScavgen\\scripts\\cat\\factories\\new_cat_factory.py",
+              "RelativeToolTip": "scripts\\cat\\factories\\new_cat_factory.py",
+              "ViewState": "AgIAAMYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-10-23T00:15:15.051Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "cats.py",
+              "DocumentMoniker": "C:\\Users\\camha\\OneDrive\\Documents\\GitHub\\VallkaryScavgen\\scripts\\cat\\cats.py",
+              "RelativeDocumentMoniker": "scripts\\cat\\cats.py",
+              "ToolTip": "C:\\Users\\camha\\OneDrive\\Documents\\GitHub\\VallkaryScavgen\\scripts\\cat\\cats.py",
+              "RelativeToolTip": "scripts\\cat\\cats.py",
+              "ViewState": "AgIAAKQCAAAAAAAAAAAiwGUCAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-10-23T00:02:14.868Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "perform_ceremony.py",
+              "DocumentMoniker": "C:\\Users\\camha\\OneDrive\\Documents\\GitHub\\VallkaryScavgen\\scripts\\events_module\\ceremony\\perform_ceremony.py",
+              "RelativeDocumentMoniker": "scripts\\events_module\\ceremony\\perform_ceremony.py",
+              "ToolTip": "C:\\Users\\camha\\OneDrive\\Documents\\GitHub\\VallkaryScavgen\\scripts\\events_module\\ceremony\\perform_ceremony.py",
+              "RelativeToolTip": "scripts\\events_module\\ceremony\\perform_ceremony.py",
+              "ViewState": "AgIAAM8BAAAAAAAAAAAAACIAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-10-23T00:01:22.537Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "load_cat_factory.py",
+              "DocumentMoniker": "C:\\Users\\camha\\OneDrive\\Documents\\GitHub\\VallkaryScavgen\\scripts\\cat\\factories\\load_cat_factory.py",
+              "RelativeDocumentMoniker": "scripts\\cat\\factories\\load_cat_factory.py",
+              "ToolTip": "C:\\Users\\camha\\OneDrive\\Documents\\GitHub\\VallkaryScavgen\\scripts\\cat\\factories\\load_cat_factory.py",
+              "RelativeToolTip": "scripts\\cat\\factories\\load_cat_factory.py",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-10-23T00:21:12.97Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "tag-lists.md",
+              "DocumentMoniker": "C:\\Users\\camha\\OneDrive\\Documents\\GitHub\\VallkaryScavgen\\docs\\dev\\writing\\reference\\tag-lists.md",
+              "RelativeDocumentMoniker": "docs\\dev\\writing\\reference\\tag-lists.md",
+              "ToolTip": "C:\\Users\\camha\\OneDrive\\Documents\\GitHub\\VallkaryScavgen\\docs\\dev\\writing\\reference\\tag-lists.md",
+              "RelativeToolTip": "docs\\dev\\writing\\reference\\tag-lists.md",
+              "ViewState": "AgIAAEEBAAAAAAAAAAAAAEgAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-10-19T01:26:03.358Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "points_of_interest.en.json",
               "DocumentMoniker": "C:\\Users\\camha\\OneDrive\\Documents\\GitHub\\VallkaryScavgen\\resources\\lang\\en\\points_of_interest.en.json",
               "RelativeDocumentMoniker": "resources\\lang\\en\\points_of_interest.en.json",
@@ -46,12 +196,11 @@
               "RelativeToolTip": "resources\\lang\\en\\points_of_interest.en.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-10-18T18:21:05.322Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-18T18:21:05.322Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 9,
               "Title": "points_of_interest.json",
               "DocumentMoniker": "C:\\Users\\camha\\OneDrive\\Documents\\GitHub\\VallkaryScavgen\\resources\\dicts\\points_of_interest.json",
               "RelativeDocumentMoniker": "resources\\dicts\\points_of_interest.json",
@@ -59,25 +208,23 @@
               "RelativeToolTip": "resources\\dicts\\points_of_interest.json",
               "ViewState": "AgIAAF0AAAAAAAAAAAAAAAgAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-10-18T18:11:16.141Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-18T18:11:16.141Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 8,
               "Title": "general.json",
               "DocumentMoniker": "C:\\Users\\camha\\OneDrive\\Documents\\GitHub\\VallkaryScavgen\\resources\\lang\\en\\events\\death\\general.json",
               "RelativeDocumentMoniker": "resources\\lang\\en\\events\\death\\general.json",
               "ToolTip": "C:\\Users\\camha\\OneDrive\\Documents\\GitHub\\VallkaryScavgen\\resources\\lang\\en\\events\\death\\general.json",
               "RelativeToolTip": "resources\\lang\\en\\events\\death\\general.json",
-              "ViewState": "AgIAALEoAAAAAAAAAAAAAMMoAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAKIoAAAAAAAAAAAAALsoAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-10-18T17:00:52.583Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-18T17:00:52.583Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 14,
               "Title": "points_of_interest.py",
               "DocumentMoniker": "C:\\Users\\camha\\OneDrive\\Documents\\GitHub\\VallkaryScavgen\\scripts\\models\\common\\points_of_interest.py",
               "RelativeDocumentMoniker": "scripts\\models\\common\\points_of_interest.py",
@@ -85,12 +232,11 @@
               "RelativeToolTip": "scripts\\models\\common\\points_of_interest.py",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAB0AAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-10-18T18:14:06.091Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-18T18:14:06.091Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 13,
               "Title": "poi.schema.json",
               "DocumentMoniker": "C:\\Users\\camha\\OneDrive\\Documents\\GitHub\\VallkaryScavgen\\schemas\\poi.schema.json",
               "RelativeDocumentMoniker": "schemas\\poi.schema.json",
@@ -98,12 +244,11 @@
               "RelativeToolTip": "schemas\\poi.schema.json",
               "ViewState": "AgIAAEsAAAAAAAAAAAAAAA4AAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-10-18T18:12:06.078Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-18T18:12:06.078Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 12,
               "Title": "biome.py",
               "DocumentMoniker": "C:\\Users\\camha\\OneDrive\\Documents\\GitHub\\VallkaryScavgen\\scripts\\models\\common\\biome.py",
               "RelativeDocumentMoniker": "scripts\\models\\common\\biome.py",
@@ -111,8 +256,7 @@
               "RelativeToolTip": "scripts\\models\\common\\biome.py",
               "ViewState": "AgIAABgAAAAAAAAAAAAAACwAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-10-18T16:41:00.21Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-18T16:41:00.21Z"
             }
           ]
         }
