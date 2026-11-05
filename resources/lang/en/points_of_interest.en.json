@@ -22,6 +22,9 @@
         "terrain_eaglenest": "the vulture nest",
         "terrain_rookery": "the rookery",
         "terrain_batcaves": "the bat caves",
-        "terrain_carrionbeach": "the rotting beach"
+        "terrain_carrionbeach": "the rotting beach",
+
+        "": "",
+        "2": ""
     }
 }

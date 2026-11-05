@@ -1047,6 +1047,8 @@ dev_tools = false
           "mediator apprentice",
           "warrior",
           "mediator",
+          "templar",
+          "disciple",
           "deputy",
           "leader"
       ]
@@ -1081,6 +1083,8 @@ dev_tools = false
       "medicine cat apprentice" = 1.5
       "mediator apprentice" = 1.5
       mediator = 2
+      disciple = 3
+      templar = 3
       warrior = 3
       apprentice = 1.5
       elder = 1.5

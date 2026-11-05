@@ -3,9 +3,16 @@
     "",
     "\\resources",
     "\\resources\\lang",
+    "\\resources\\lang\\en",
+    "\\resources\\lang\\en\\thoughts",
     "\\scripts",
-    "\\scripts\\cat"
+    "\\scripts\\cat",
+    "\\scripts\\cat\\factories",
+    "\\scripts\\clan_resources",
+    "\\scripts\\events_module",
+    "\\scripts\\models",
+    "\\scripts\\models\\common",
+    "\\scripts\\models\\shortevent"
   ],
-  "SelectedNode": "\\scripts\\clan.py",
   "PreviewInSolutionExplorer": false
 }

@@ -21,3 +21,4 @@ class Illness(Enum):
     grief_stricken = "grief stricken"
     malnourished = "malnourished"
     starving = "starving"
+    rotting = "rotting"

@@ -37,6 +37,14 @@
             "one": "mediator",
             "many": "mediators"
         },
+        "templar": {
+          "one": "templar",
+          "many":  "templars"
+        },
+        "disciple":  {
+          "one": "disciple",
+          "many": "disciples"
+        },
         "apprentice": {
             "one": "trainee",
             "many": "trainee"

@@ -447,8 +447,11 @@ def _is_suitable_templar(cat) -> bool:
         SkillPath.DARK,
     ]
 
-    if cat.skills.primary.path in templar_skills:
+    if cat.skills.primary.path not in templar_skills:
+        chance = 0
+    else:
         chance = 20
+    
 
     if cat.skills.secondary and cat.skills.secondary.path in templar_skills:
         chance = chance / 2

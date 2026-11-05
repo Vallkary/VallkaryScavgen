@@ -1,0 +1,834 @@
+[
+    
+    {
+        "event_id": "test",
+        "types": [
+            "hunting"
+        ],
+        "frequency": 1,
+        "required_cat_types": {
+            "patrol_cats": [1, 6]
+        },
+        "involved_cats": {
+                "r_c0/p_l/s_c0": {
+                    "prior_abbreviation": ["any"],
+                    "stat": {
+                        "skill": [
+                            "SKILL,1",
+                            "SKILL,1"
+                        ],
+                        "trait": [
+                            "trait",
+                            "trait"
+                        ]
+                    },
+                    "past/status": [
+                        "blah",
+                        "blah"
+                    ]
+                }
+        },
+        "relationship_constraint": [],
+        "chance_of_success": 30,
+        "patrol_art": "cat_sprites/gen_hunt_sneakprey_Wr",
+        "intro_strings": ["Patrol heads out to do some-such."],
+        "decline_strings": ["Patrol turns around"],
+        "success_outcomes": [
+            {
+                "frequency": 1,
+                "strings": [
+                    ""
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "relationship"
+                        ],
+                        "amount": 0,
+                        "log": {
+                            "cats_from": "cat_to blah blah blah cat_from blah blah."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_low/medium/high/whatever"
+                    }
+                ]
+            },
+            {
+                "frequency": 1,
+                "strings": [
+                    ""
+                ],
+                "exp_gained": 0,
+                "relationship_changes/death/condition": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "relationship"
+                        ],
+                        "amount": 0,
+                        "log": {
+                            "cats_from": "special cat_to blah blah blah cat_from blah blah."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_low/medium/high/whatever"
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "frequency": 1,
+                "strings": [
+                    ""
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "relationship"
+                        ],
+                        "amount": -0,
+                        "log": {
+                            "cats_from": "cat_to blah blah blah cat_from blah blah."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 1,
+                "strings": [
+                    ""
+                ],
+                "exp_gained": 0,
+                "relationship_changes/death/condition": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "relationship"
+                        ],
+                        "amount": 0,
+                        "log": {
+                            "cats_from": "special cat_to blah blah blah cat_from blah blah."
+                        }
+                    }
+                ],
+                "supply": [
+                    {
+                        "type": "freshkill",
+                        "adjust": "increase_low/medium/high/whatever"
+                    }
+                ]
+            }
+        ]
+    },
+    
+
+
+    // SOLO EGGBUG
+    {
+        "event_id": "gen_hunt_soloeggbug",
+        "types": [
+            "hunting"
+        ],
+        "frequency":  3,
+        "required_cat_types": {
+            "patrol_cats": [1, 1]
+        },
+        "chance_of_success": 30,
+        "patrol_art": "cat_sprites/gen_hunt_sneakprey_Wr",
+        "intro_strings": ["p_l is patrolling alone when an Eggbug leaps out of a nearby pipe!"],
+        "decline_strings": ["The Eggbug isn't worth the effort, {PRONOUN/p_l/subject} reasons, as it scurries away as quick as it appeared."],
+      "success_outcomes": [
+        {
+          "frequency": 4,
+          "strings": [
+            "p_l leaps into action, grabbing a spear and launching it towards the bug- piercing its shell and sending the eggs flying off in a burst."
+          ],
+          "exp_gained": 15,
+          "relationship_changes": [
+            {
+              "cats_to": [
+                "p_l"
+              ],
+              "cats_from": [
+                "clan"
+              ],
+              "mutual": false,
+              "values": [
+                "respect"
+              ],
+              "amount": 5,
+              "log": {
+                "cats_from": "cat_from was impressed when cat_to returned home with an Eggbug's brood."
+              }
+            }
+          ],
+          "supply": [
+            {
+              "type": "freshkill",
+              "adjust": "increase_medium"
+            }
+          ]
+        },
+        {
+          "frequency": 4,
+          "strings": [
+            "p_l was so startled, it's a wonder {PRONOUN/p_l/subject} managed to hit it at all!"
+          ],
+          "exp_gained": 0,
+          "relationship_changes/death/condition": [
+            {
+              "cats_to": [
+                "p_l"
+              ],
+              "cats_from": [
+                "clan"
+              ],
+              "mutual": false,
+              "values": [
+                "respect"
+              ],
+              "amount": 5,
+              "log": {
+                "cats_from": "cat_from was impressed when cat_to returned home with an Eggbug's brood."
+              }
+            }
+          ],
+          "supply": [
+            {
+              "type": "freshkill",
+              "adjust": "increase_medium"
+            }
+          ]
+        },
+        {
+          "frequency": 4,
+          "strings": [
+            "p_l is grateful for the food {PRONOUN/p_l/subject}{VERB/p_l/is/are} be bringing back to the Tribe, less so for the fact {PRONOUN/p_l/subject} now need to search for all the scattered eggs."
+          ],
+          "exp_gained": 15,
+          "relationship_changes/death/condition": [
+            {
+              "cats_to": [
+                "p_l"
+              ],
+              "cats_from": [
+                "clan"
+              ],
+              "mutual": false,
+              "values": [
+                "respect"
+              ],
+              "amount": 5,
+              "log": {
+                "cats_from": "cat_from was impressed when cat_to returned home with an Eggbug's brood."
+              }
+            }
+          ],
+          "supply": [
+            {
+              "type": "freshkill",
+              "adjust": "increase_medium"
+            }
+          ]
+        },
+        {
+          "frequency": 3,
+          "strings": [
+            "p_l startles and drops {PRONOUN/p_l/poss} spear, and instead... leaps towards the bug? {PRONOUN/p_l/subject/CAP}'s/'re not sure what to do with the insect writhing in {PRONOUN/p_l/poss} grip, the creature just as startled as {PRONOUN/p_l/subject} {VERB/p_l/are/is}, but p_l takes it home regardless."
+          ],
+          "involved_cats": {
+            "p_l": {
+              "prior_abbreviation": [
+                "any"
+              ],
+              "stat": {
+                "trait": [
+                  "impulsive",
+                  "skittish",
+                  "nervous"
+                ]
+              }
+            }
+          },
+          "exp_gained": 10,
+          "relationship_changes/death/condition": [
+            {
+              "cats_to": [
+                "p_l"
+              ],
+              "cats_from": [
+                "clan"
+              ],
+              "mutual": false,
+              "values": [
+                "respect",
+                "comfort"
+              ],
+              "amount": 5,
+              "log": {
+                "cats_from": "cat_from was amused and impressed when cat_to returned home with a live Eggbug."
+              }
+            }
+          ],
+          "supply": [
+            {
+              "type": "freshkill",
+              "adjust": "increase_large"
+            }
+          ]
+        },
+        {
+          "frequency": 4,
+          "strings": [
+            "{PRONOUN/p_l/subject/CAP} almost feels bad for the creature. It must be difficult, trying to protect your brood when it's proven to be quite nutitious for all manner of beast... but p_l won't let {PRONOUN/p_l/poss} Tribe go hungry. {PRONOUN/p_l/subject/CAP} simply can't."
+          ],
+          "involved_cats": {
+            "p_l": {
+              "prior_abbreviation": [
+                "any"
+              ],
+              "stat": {
+                "trait": [
+                  "compassionate",
+                  "thoughtful",
+                  "loving",
+                  "sincere"
+                ]
+              }
+            }
+          },
+          "exp_gained": 15,
+          "relationship_changes/death/condition": [
+            {
+              "cats_to": [
+                "p_l"
+              ],
+              "cats_from": [
+                "clan"
+              ],
+              "mutual": false,
+              "values": [
+                "respect"
+              ],
+              "amount": 5,
+              "log": {
+                "cats_from": "cat_from was impressed when cat_to returned home with an Eggbug's brood."
+              }
+            }
+          ],
+          "supply": [
+            {
+              "type": "freshkill",
+              "adjust": "increase_medium"
+            }
+          ]
+        },
+        {
+          "frequency": 4,
+          "strings": [
+            "p_l almost feels a giddiness rise in {PRONOUN/p_l/poss} throat at the thought of such a valuable catch, and {VERB/p_l/don't/doesn't} hesitate to spear the bug and ferry its eggs home."
+          ],
+          "involved_cats": {
+            "p_l": {
+              "prior_abbreviation": [
+                "any"
+              ],
+              "stat": {
+                "trait": [
+                  "bold",
+                  "daring",
+                  "ambitious",
+                  "impulsive"
+                ]
+              }
+            }
+          },
+          "exp_gained": 15,
+          "relationship_changes/death/condition": [
+            {
+              "cats_to": [
+                "p_l"
+              ],
+              "cats_from": [
+                "clan"
+              ],
+              "mutual": false,
+              "values": [
+                "respect"
+              ],
+              "amount": 5,
+              "log": {
+                "cats_from": "cat_from was impressed when cat_to returned home with an Eggbug's brood."
+              }
+            }
+          ],
+          "supply": [
+            {
+              "type": "freshkill",
+              "adjust": "increase_medium"
+            }
+          ]
+        },
+        {
+          "frequency": 4,
+          "strings": [
+            "The creature was truly, pitifully unlucky to have crossed paths with p_l this cycle. 'difficult prey'? Yeah, right. The only thing difficult about catching an Eggbug is trying not to lose the eggs when walking home!"
+          ],
+          "involved_cats": {
+            "p_l": {
+              "prior_abbreviation": [
+                "any"
+              ],
+              "stat": {
+                "trait": [
+                  "fierce",
+                  "confident",
+                  "shameless",
+                  "arrogant",
+                  "competitive"
+                ]
+              }
+            }
+          },
+          "exp_gained": 15,
+          "relationship_changes/death/condition": [
+            {
+              "cats_to": [
+                "p_l"
+              ],
+              "cats_from": [
+                "clan"
+              ],
+              "mutual": false,
+              "values": [
+                "respect"
+              ],
+              "amount": 5,
+              "log": {
+                "cats_from": "cat_from was impressed when cat_to returned home with an Eggbug's brood."
+              }
+            }
+          ],
+          "supply": [
+            {
+              "type": "freshkill",
+              "adjust": "increase_medium"
+            }
+          ]
+        },
+        {
+          "frequency": 4,
+          "strings": [
+            "The creature was truly, pitifully unlucky to have crossed paths with p_l this cycle. 'difficult prey'? Yeah, right. The only thing difficult about catching an Eggbug is trying not to lose the eggs when walking home!"
+          ],
+          "involved_cats": {
+            "p_l": {
+              "prior_abbreviation": [
+                "any"
+              ],
+              "stat": {
+                "skill": [
+                  "HUNTER,0"
+                ]
+              }
+            }
+          },
+          "exp_gained": 15,
+          "relationship_changes/death/condition": [
+            {
+              "cats_to": [
+                "p_l"
+              ],
+              "cats_from": [
+                "clan"
+              ],
+              "mutual": false,
+              "values": [
+                "respect"
+              ],
+              "amount": 5,
+              "log": {
+                "cats_from": "cat_from was impressed when cat_to returned home with an Eggbug's brood."
+              }
+            }
+          ],
+          "supply": [
+            {
+              "type": "freshkill",
+              "adjust": "increase_medium"
+            }
+          ]
+        },
+        {
+          "frequency": 2,
+          "strings": [
+            "It feels good to be in control every once in a while, and the Eggbug has just made the mistake of entering a room with only one exit. Perhaps cruel, but p_l just can't help it when the oppurtunity is right there- to block the exit and watch as the bug scampers about the room in a fearful frenzy- jolting and sprinting every time {PRONOUN/p_l/subject} moves. Perhaps unethical, according to {PRONOUN/p_l/poss} more sensitive Tribe mates, but {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} think it matters as long as the Tribe is fed."
+          ],
+          "involved_cats": {
+            "p_l": {
+              "prior_abbreviation": [
+                "any"
+              ],
+              "stat": {
+                "trait": [
+                  "bloodthirsty",
+                  "vengeful",
+                  "grumpy",
+                  "bullying",
+                  "bossy"
+                ]
+              }
+            }
+          },
+          "exp_gained": 15,
+          "relationship_changes/death/condition": [
+            {
+              "cats_to": [
+                "p_l"
+              ],
+              "cats_from": [
+                "clan"
+              ],
+              "mutual": false,
+              "values": [
+                "respect"
+              ],
+              "amount": 5,
+              "log": {
+                "cats_from": "cat_from was impressed when cat_to returned home with an Eggbug's brood."
+              }
+            }
+          ],
+          "supply": [
+            {
+              "type": "freshkill",
+              "adjust": "increase_medium"
+            }
+          ]
+        },
+        {
+          "frequency": 3,
+          "strings": [
+            "p_l expects the bug to jolt or skitter away when they approach, but it just sits there, staring at {PRONOUN/p_l/subject}, practically waiting to be killed. What a lazy beast!"
+          ],
+          "exp_gained": 0,
+          "relationship_changes/death/condition": [
+            {
+              "cats_to": [
+                "p_l"
+              ],
+              "cats_from": [
+                "clan"
+              ],
+              "mutual": false,
+              "values": [
+                "respect"
+              ],
+              "amount": 5,
+              "log": {
+                "cats_from": "cat_from was impressed when cat_to returned home with an Eggbug's brood."
+              }
+            }
+          ],
+          "supply": [
+            {
+              "type": "freshkill",
+              "adjust": "increase_medium"
+            }
+          ]
+        },
+        {
+          "frequency": 3,
+          "strings": [
+            "p_l waits for the perfect moment... and hits it, dead on!"
+          ],
+          "exp_gained": 0,
+          "relationship_changes/death/condition": [
+            {
+              "cats_to": [
+                "p_l"
+              ],
+              "cats_from": [
+                "clan"
+              ],
+              "mutual": false,
+              "values": [
+                "respect"
+              ],
+              "amount": 5,
+              "log": {
+                "cats_from": "cat_from was impressed when cat_to returned home with an Eggbug's brood."
+              }
+            }
+          ],
+          "supply": [
+            {
+              "type": "freshkill",
+              "adjust": "increase_medium"
+            }
+          ]
+        },
+        {
+          "frequency": 3,
+          "strings": [
+            "p_l would hate to waste a spear if they don't hit the bug, but {PRONOUN/p_l/subject} have plenty of rocks to spare. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} quite pleased when {PRONOUN/p_l/poss} plan works, the Eggbug leaping from the rock and right into the crosshairs of p_l's spear."
+          ],
+          "involved_cats": {
+            "p_l": {
+              "prior_abbreviation": [
+                "any"
+              ],
+              "stat": {
+                "skill": [
+                  "CLEVER,0"
+                ]
+              }
+            }
+          },
+          "exp_gained": 0,
+          "relationship_changes/death/condition": [
+            {
+              "cats_to": [
+                "p_l"
+              ],
+              "cats_from": [
+                "clan"
+              ],
+              "mutual": false,
+              "values": [
+                "respect"
+              ],
+              "amount": 5,
+              "log": {
+                "cats_from": "cat_from was impressed when cat_to returned home with an Eggbug's brood."
+              }
+            }
+          ],
+          "supply": [
+            {
+              "type": "freshkill",
+              "adjust": "increase_medium"
+            }
+          ]
+        },
+        {
+          "frequency": 3,
+          "strings": [
+            "The bug runs, but p_l's faster! Well, maybe not faster, but fast enough to get close enough and ensure {PRONOUN/p_l/poss} spear will not miss."
+          ],
+          "involved_cats": {
+            "p_l": {
+              "prior_abbreviation": [
+                "any"
+              ],
+              "stat": {
+                "skill": [
+                  "RUNNER,1"
+                ]
+              }
+            }
+          },
+          "exp_gained": 0,
+          "relationship_changes/death/condition": [
+            {
+              "cats_to": [
+                "p_l"
+              ],
+              "cats_from": [
+                "clan"
+              ],
+              "mutual": false,
+              "values": [
+                "respect"
+              ],
+              "amount": 5,
+              "log": {
+                "cats_from": "cat_from was impressed when cat_to returned home with an Eggbug's brood."
+              }
+            }
+          ],
+          "supply": [
+            {
+              "type": "freshkill",
+              "adjust": "increase_medium"
+            }
+          ]
+        },
+        {
+          "frequency": 3,
+          "strings": [
+            "The Eggbug skitters away at the sight of {PRONOUN/p_l/object}, but it's all for naught! {PRONOUN/p_l/subject/CAP} {VERB/p_l/give/gives} chase as it rushes up a tall pole. It surely didn't expect p_l to have caught up so quickly!"
+          ],
+          "involved_cats": {
+            "p_l": {
+              "prior_abbreviation": [
+                "any"
+              ],
+              "stat": {
+                "skill": [
+                  "CLIMBER,0"
+                ]
+              }
+            }
+          },
+          "exp_gained": 0,
+          "relationship_changes/death/condition": [
+            {
+              "cats_to": [
+                "p_l"
+              ],
+              "cats_from": [
+                "clan"
+              ],
+              "mutual": false,
+              "values": [
+                "respect"
+              ],
+              "amount": 5,
+              "log": {
+                "cats_from": "cat_from was impressed when cat_to returned home with an Eggbug's brood."
+              }
+            }
+          ],
+          "supply": [
+            {
+              "type": "freshkill",
+              "adjust": "increase_medium"
+            }
+          ]
+        },
+        {
+          "frequency": 3,
+          "strings": [
+            "Surely- that was the <i/>cleanest</i> hit any Scavenger has ever seen! Or could have ever seen- considering {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} alone. Maybe {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not as careful as {PRONOUN/p_l/subject} should be, carrying a whole brood home, but p_l's too pleased to care!"
+          ],
+          "involved_cats": {
+            "p_l": {
+              "prior_abbreviation": [
+                "any"
+              ],
+              "stat": {
+                "trait": [
+                  "oblivious",
+                  "childish"
+                ]
+              }
+            }
+          },
+          "exp_gained": 0,
+          "relationship_changes/death/condition": [
+            {
+              "cats_to": [
+                "p_l"
+              ],
+              "cats_from": [
+                "clan"
+              ],
+              "mutual": false,
+              "values": [
+                "respect"
+              ],
+              "amount": 0,
+              "log": {
+                "cats_from": "cat_from was pleased when cat_to returned home with part of an Eggbug's brood, but they wonder where the rest went..."
+              }
+            }
+          ],
+          "supply": [
+            {
+              "type": "freshkill",
+              "adjust": "increase_small"
+            }
+          ]
+        }
+      ],
+        "fail_outcomes": [
+            {
+                "frequency": 1,
+                "strings": [
+                    ""
+                ],
+                "exp_gained": 0,
+                "relationship_changes": [
+                    {
+                        "cats_to": [
+                            "patrol_cats"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "relationship"
+                        ],
+                        "amount": -0,
+                        "log": {
+                            "cats_from": "cat_to blah blah blah cat_from blah blah."
+                        }
+                    }
+                ]
+            },
+            {
+                "frequency": 1,
+                "strings": [
+                    ""
+                ],
+                "exp_gained": 0,
+                "relationship_changes/death/condition": [
+                    {
+                        "cats_to": [
+                            "s_c0"
+                        ],
+                        "cats_from": [
+                            "r_c0"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "relationship"
+                        ],
+                        "amount": -0,
+                        "log": {
+                            "cats_from": "special cat_to blah blah blah cat_from blah blah."
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+]

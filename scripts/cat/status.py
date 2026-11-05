@@ -19,6 +19,8 @@ class Status:
         CatRank.WARRIOR: CatSocial.CLANCAT,
         CatRank.MEDICINE_CAT: CatSocial.CLANCAT,
         CatRank.MEDIATOR: CatSocial.CLANCAT,
+        CatRank.TEMPLAR: CatSocial.CLANCAT,
+        CatRank.DISCIPLE: CatSocial.CLANCAT,
         CatRank.DEPUTY: CatSocial.CLANCAT,
         CatRank.LEADER: CatSocial.CLANCAT,
         CatRank.ELDER: CatSocial.CLANCAT,
